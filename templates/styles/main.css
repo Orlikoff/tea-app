@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    /*Main*/
+    --bg: #6E7152;
+    --main-text: #FFFFFF;
+    --sec-text: #CFD1BE;
+    --logo-text: #2A2C1D;
+
+    /*Common buttons*/
+    --btn-back-bg: #34402E;
+    --btn-back-text: #70B26A;
+    --btn-act-bg: #3F3838;
+    --btn-act-text: #AF7B6A;
+
+    /*Neutral buttons*/
+    --btn-neut-bg: #8E926A;
+    --btn-neut-text: #CFD1BE;
+    --btn-neut-border: #6E7152;
+    --btn-neut-bwidth: 10px;
+
+    /*Navigation*/
+    --nav-inact: #CFD1BE;
+    --nav-act: #FFFFFF;
+
+    /*Main buttons*/
+    --btn-pos-bg: #598E54;
+    --btn-pos-text: #C4FCA8;
+    --btn-neg-bg: #8E5454;
+    --btn-neg-text: #FCA8A8;
+
+    /*Item*/
+    --item-bg: #434531;
+    --item-dark-bg: #2A2C1D;
+
+    /*Item marks*/
+    --low-profile: #EE6E6E;
+    --medium-profile: #E99D44;
+    --good-profile: #DAE27B;
+    --excellent-profile: #43A933;
+    --verified-profile: #53DBDB;
+
+    /*Strong action buttons*/
+    --btn-strong-act-bg: #3F3838;
+    --btn-strong-act-text: #CFD1BE;
+    --btn-strong-act-border: #514D44;
+    --btn-strong-bwidth: 10px;
+
+    /*Cart counter*/
+    --cart-ctr-bg: #3F3838;
+    --cart-ctr-text: #CFD1BE;
+
+    /*Tea item colors*/
+    --tea-plus: #598E54;
+    --tea-minus: #8E5454;
+    --tea-pending: #548E84;
+
+    /*Button strong pos/neg*/
+    --btn-strong-pos-bg: #598E54;
+    --btn-strong-pos-text: #CFD1BE;
+    --btn-strong-pos-border: #649E5F;
+    --btn-strong-neg-bg: #713434;
+    --btn-strong-neg-text: #DF6F6F;
+    --btn-strong-neg-border: #644646;
+
+    /*Fonts*/
+    --logo-font: 3rem;
+    --nav-font: 1.5rem;
+    --section-title-font: 64;
+    --heading-font: 48;
+    --std-btn-font: 32;
+    --med-btn-font: 36;
+    --big-btn-font: 48;
+    --sml-btn-font: 20;
+    --title-font: 40;
+
+    /*Margins*/
+    --lr-shift: 3rem;
+}
+
+body {
+    background-color: var(--bg);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--lr-shift);
+}
+
+header {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+
+header p {
+    color: var(--logo-text);
+    width: 30%;
+    display: flex;
+    justify-content: right;
+    font-size: var(--logo-font);
+    font-weight: bold;
+}
+
+header img {
+    width: 7px;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+nav {
+    width: 70%;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav ul {
+    font-size: var(--nav-font);
+    width: 100%;
+    list-style: none;
+}
+
+nav ul li {
+    color: var(--nav-inact);
+    display: inline;
+    margin-right: 3rem;
+    font-weight: 500;
+    border-bottom: 2px solid var(--nav-inact);
+    padding-bottom: 3px;
+    transition: all 0.3s;
+}
+
+nav ul li:hover {
+    color: var(--main-text);
+    padding-bottom: 7px;
+}
+
+nav ul li:hover > img{
+    transform: translateX(150%);
+}
+
+.activeLink {
+    color: var(--main-text);
+}
+
+.inactiveLink {
+    color: var(--secondary);
+}
+
+.bulb {
+    position: absolute;
+    z-index: -1;
+    right: -10%;
+    top: -10%;
+}
+
+.wave {
+    position: absolute;
+    z-index: -1;
+    right: -10%;
+    bottom: -10%;
+}
+
+.leaf {
+    position: absolute;
+    z-index: -1;
+    width: 700px;
+    bottom: 0;
+}
+
+.leafTop {
+    position: absolute;
+    z-index: -1;
+    width: 700px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main {
+    flex-grow: 1;
+}
