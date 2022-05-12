@@ -70,17 +70,19 @@
 
     /*Fonts*/
     --logo-font: 3rem;
+    /* 96px */
     --nav-font: 1.5rem;
-    --section-title-font: 64;
-    --heading-font: 48;
-    --std-btn-font: 32;
+    --section-title-font: 2rem;
+    --heading-font: 1.5rem;
+    --std-btn-font: 1rem;
     --med-btn-font: 36;
-    --big-btn-font: 48;
-    --sml-btn-font: 20;
+    --big-btn-font: 1.5rem;
+    --sml-btn-font: 0.625rem;
     --title-font: 40;
 
     /*Margins*/
     --lr-shift: 3rem;
+    --bt-shift: 1.5rem;
 }
 
 body {
@@ -150,7 +152,7 @@ nav ul li:hover {
     padding-bottom: 7px;
 }
 
-nav ul li:hover > img{
+nav ul li:hover>img {
     transform: translateX(150%);
 }
 
@@ -171,7 +173,7 @@ nav ul li:hover > img{
 
 .wave {
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     right: -10%;
     bottom: -10%;
 }
@@ -194,4 +196,120 @@ nav ul li:hover > img{
 
 main {
     flex-grow: 1;
+}
+
+.btnActRed {
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-act-text);
+    background-color: var(--btn-act-bg);
+    box-shadow: 0px 4px 9px #00000080;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btnActRed:hover {
+    transform: translateY(-5px);
+}
+
+.btnActRed:active {
+    color: var(--btn-act-bg);
+    background-color: var(--btn-act-text);
+}
+
+.listItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 25rem;
+    background-color: var(--item-dark-bg);
+    color: var(--main-text);
+    font-size: var(--std-btn-font);
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+}
+
+.listItem .textSection {
+    display: flex;
+    width: 100%;
+    margin-right: 1.5rem;
+    justify-content: space-between;
+}
+
+.listItem .price {
+    font-style: italic;
+}
+
+.btnPos {
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: var(--sml-btn-font);
+    color: var(--btn-pos-text);
+    background-color: var(--btn-pos-bg);
+    box-shadow: 0px 4px 9px #00000080;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btnPos:hover {
+    transform: translateY(-3px);
+}
+
+.btnPos:active {
+    color: var(--btn-pos-bg);
+    background-color: var(--btn-pos-text);
+}
+
+.btnNeut {
+    margin-left: 2rem;
+    width: fit-content;
+    border: solid 7px var(--btn-neut-border);
+    padding: 0.3rem;
+    border-radius: 3rem;
+}
+
+.btnNeut button {
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: var(--big-btn-font);
+    color: var(--btn-neut-text);
+    background-color: var(--btn-neut-bg);
+    box-shadow: 0px 4px 9px #00000080;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnNeut:hover>button {
+    transform: translateY(-3px);
+}
+
+.btnNeut:active>button {
+    color: var(--btn-neut-bg);
+    background-color: var(--btn-neut-text);
+}
+
+.btnBack {
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-back-text);
+    background-color: var(--btn-back-bg);
+    box-shadow: 0px 4px 9px #00000080;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btnBack:hover {
+    transform: translateY(-5px);
+}
+
+.btnBack:active {
+    color: var(--btn-back-bg);
+    background-color: var(--btn-back-text);
 }

@@ -1,5 +1,105 @@
+@import url(./main.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: var(--bt-shift);
+}
+
 .topBlock {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+    justify-content: space-between;
+    height: 60%;
     width: 100%;
-    height: 500px;
-    background-color: #8E926A;
+}
+
+.leftPart {
+    flex-grow: 1;
+}
+
+.leftPart p {
+    width: 60%;
+    color: var(--main-text);
+    font-size: var(--section-title-font);
+    margin-bottom: 1rem;
+}
+
+.rightPart {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.rightPart .bigTitle {
+    width: fit-content;
+    text-align: right;
+    color: var(--main-text);
+    font-size: var(--heading-font);
+    border-bottom: solid 2px var(--main-text);
+    margin-bottom: 1rem;
+}
+
+.sectTitle {
+    display: flex;
+    justify-content: right;
+}
+
+.bottomBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    height: 40%;
+    width: 100%;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+}
+
+.items .listItem {
+    margin-bottom: 0.5rem;
+}
+
+.btnNeut {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    width: 15rem;
+}
+
+.social .btnActRed img {
+    width: 1.9rem;
+}
+
+.social .btnActRed {
+    border-radius: 1.5rem;
+}
+
+.authRequest .title {
+    text-align: right;
+    font-size: var(--heading-font);
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.buttons .btnBack {
+    margin-left: 1rem;
 }
