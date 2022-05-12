@@ -1,0 +1,8 @@
+@import url(./main.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: var(--bt-shift);
+}

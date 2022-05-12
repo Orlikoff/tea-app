@@ -62,9 +62,11 @@ main {
 .items {
     display: flex;
     flex-direction: column;
+    justify-content: right;
 }
 
 .items .listItem {
+    margin-left: auto;
     margin-bottom: 0.5rem;
 }
 

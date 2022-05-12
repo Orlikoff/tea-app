@@ -75,14 +75,18 @@
     --section-title-font: 2rem;
     --heading-font: 1.5rem;
     --std-btn-font: 1rem;
-    --med-btn-font: 36;
+    --med-btn-font: 1.125rem;
     --big-btn-font: 1.5rem;
     --sml-btn-font: 0.625rem;
-    --title-font: 40;
+    --title-font: 1.25rem;
 
     /*Margins*/
     --lr-shift: 3rem;
     --bt-shift: 1.5rem;
+    --tp-shift: 3rem;
+
+    /*Font settings*/
+    --btn-weight: normal;
 }
 
 body {
@@ -199,6 +203,7 @@ main {
 }
 
 .btnActRed {
+    font-weight: var(--btn-weight);
     cursor: pointer;
     border-radius: 1rem;
     border: none;
@@ -206,7 +211,7 @@ main {
     font-size: var(--med-btn-font);
     color: var(--btn-act-text);
     background-color: var(--btn-act-bg);
-    box-shadow: 0px 4px 9px #00000080;
+    box-shadow: 0 4px 9px #00000080;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -247,11 +252,12 @@ main {
     cursor: pointer;
     border-radius: 1rem;
     border: none;
+    font-weight: var(--btn-weight);
     padding: 0.5rem 1.5rem;
     font-size: var(--sml-btn-font);
     color: var(--btn-pos-text);
     background-color: var(--btn-pos-bg);
-    box-shadow: 0px 4px 9px #00000080;
+    box-shadow: 0 4px 9px #00000080;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -273,6 +279,7 @@ main {
 }
 
 .btnNeut button {
+    font-weight: var(--btn-weight);
     cursor: pointer;
     border-radius: 2rem;
     border: none;
@@ -280,20 +287,21 @@ main {
     font-size: var(--big-btn-font);
     color: var(--btn-neut-text);
     background-color: var(--btn-neut-bg);
-    box-shadow: 0px 4px 9px #00000080;
+    box-shadow: 0 4px 9px #00000080;
     transition: all 0.2s ease-in-out;
 }
 
-.btnNeut:hover>button {
+.btnNeut:hover button {
     transform: translateY(-3px);
 }
 
-.btnNeut:active>button {
+.btnNeut:active button {
     color: var(--btn-neut-bg);
     background-color: var(--btn-neut-text);
 }
 
 .btnBack {
+    font-weight: var(--btn-weight);
     cursor: pointer;
     border-radius: 1rem;
     border: none;
@@ -301,7 +309,7 @@ main {
     font-size: var(--med-btn-font);
     color: var(--btn-back-text);
     background-color: var(--btn-back-bg);
-    box-shadow: 0px 4px 9px #00000080;
+    box-shadow: 0 4px 9px #00000080;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -312,4 +320,34 @@ main {
 .btnBack:active {
     color: var(--btn-back-bg);
     background-color: var(--btn-back-text);
+}
+
+.btnStrongAct {
+    margin-left: 2rem;
+    width: fit-content;
+    border: solid 7px var(--btn-strong-act-border);
+    padding: 0.3rem;
+    border-radius: 3rem;
+}
+
+.btnStrongAct button {
+    font-weight: var(--btn-weight);
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-strong-act-text);
+    background-color: var(--btn-strong-act-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnStrongAct:hover button {
+    transform: translateY(-3px);
+}
+
+.btnStrongAct:active button {
+    color: var(--btn-strong-act-bg);
+    background-color: var(--btn-strong-act-text);
 }
