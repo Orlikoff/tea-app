@@ -35,7 +35,8 @@
     --btn-neg-text: #FCA8A8;
 
     /*Item*/
-    --item-bg: #434531;
+    /* --item-bg: #434531; */
+    --item-bg: #202216;
     --item-dark-bg: #2A2C1D;
 
     /*Item marks*/
@@ -242,6 +243,7 @@ main {
     width: 100%;
     margin-right: 1.5rem;
     justify-content: space-between;
+    align-items: center;
 }
 
 .listItem .price {
