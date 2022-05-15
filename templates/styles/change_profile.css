@@ -1,0 +1,53 @@
+@import url(./main.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: var(--bt-shift);
+    background-color: var(--nav-font);
+    margin-top: var(--tp-shift);
+}
+
+.topBar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.btnBack {
+    position: absolute;
+    left: 0;
+}
+
+.sectionTitle {
+    font-size: var(--section-title-font);
+    color: var(--main-text);
+    margin: auto;
+}
+
+.info {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    background-color: #2A2C1D;
+}
+
+.space {
+    width: 50%;
+}
+
+.left {
+
+}
+
+.left p{
+    margin-bottom: 1rem;
+    color: var(--nav-inact);
+    font-size: var(--title-font);
+}
+
+.right {
+    background-color: #34402E;
+}

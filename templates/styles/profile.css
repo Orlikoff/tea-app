@@ -35,7 +35,6 @@ main {
 }
 
 .listItem {
-    border: 4px solid transparent;
     position: relative;
     width: 25rem;
 }
@@ -83,20 +82,9 @@ main {
 }
 
 .bottom .actions {
+    width: 100%;
     display: flex;
-    justify-content: center;
-}
-
-.bottom .btnNeut button {
-    font-size: var(--med-btn-font);
-}
-
-.bottom p {
-    border-radius: 1.5rem;
-    padding: 0.5rem 1rem;
-    color: var(--btn-act-bg);
-    background-color: var(--sec-text);
-    font-size: var(--heading-font);
+    justify-content: space-between;
 }
 
 .topBar {
@@ -106,22 +94,51 @@ main {
     margin-bottom: 2rem;
 }
 
+.btnStrongAct {
+    margin-left: 0;
+}
+
 .btnBack {
     position: absolute;
     left: 0;
 }
 
 .sectionTitle {
-    font-size: var(--section-title-font);
+    font-size: var(--logo-font);
     color: var(--main-text);
     margin: auto;
 }
 
-.added {
-    border: 4px solid var(--btn-pos-bg);
+.currentRating {
+    color: var(--main-text);
+    font-size: var(--section-title-font);
+    margin-bottom: 1rem;
 }
 
-.removed {
-    border: 4px solid var(--btn-neg-bg);
+.heading {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    color: var(--main-text);
+    font-size: var(--heading-font);
 }
 
+.markLow {
+    color: var(--low-profile);
+}
+
+.markMedium {
+    color: var(--medium-profile);
+}
+
+.markGood {
+    color: var(--good-profile);
+}
+
+.markExcellent {
+    color: var(--excellent-profile);
+}
+
+.markVerified {
+    color: var(--verified-profile);
+}

@@ -272,6 +272,28 @@ main {
     background-color: var(--btn-pos-text);
 }
 
+.btnNeg {
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    font-weight: var(--btn-weight);
+    padding: 0.5rem 1.5rem;
+    font-size: var(--sml-btn-font);
+    color: var(--btn-neg-text);
+    background-color: var(--btn-neg-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btnNeg:hover {
+    transform: translateY(-3px);
+}
+
+.btnNeg:active {
+    color: var(--btn-neg-bg);
+    background-color: var(--btn-neg-text);
+}
+
 .btnNeut {
     margin-left: 2rem;
     width: fit-content;
@@ -352,4 +374,65 @@ main {
 .btnStrongAct:active button {
     color: var(--btn-strong-act-bg);
     background-color: var(--btn-strong-act-text);
+}
+
+.btnStrongActPos {
+    margin-left: 2rem;
+    width: fit-content;
+    border: solid 7px var(--btn-strong-pos-border);
+    padding: 0.3rem;
+    border-radius: 3rem;
+}
+
+.btnStrongActPos button {
+    font-weight: var(--btn-weight);
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-strong-pos-text);
+    background-color: var(--btn-strong-pos-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnStrongActPos:hover button {
+    transform: translateY(-3px);
+}
+
+.btnStrongActPos:active button {
+    color: var(--btn-strong-pos-bg);
+    background-color: var(--btn-strong-pos-text);
+}
+
+
+.btnStrongActNeg {
+    margin-left: 2rem;
+    width: fit-content;
+    border: solid 7px var(--btn-strong-neg-border);
+    padding: 0.3rem;
+    border-radius: 3rem;
+}
+
+.btnStrongActNeg button {
+    font-weight: var(--btn-weight);
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-strong-neg-text);
+    background-color: var(--btn-strong-neg-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnStrongActNeg:hover button {
+    transform: translateY(-3px);
+}
+
+.btnStrongActNeg:active button {
+    color: var(--btn-strong-neg-bg);
+    background-color: var(--btn-strong-neg-text);
 }
