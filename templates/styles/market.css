@@ -149,3 +149,16 @@ main {
 .markVerified {
     color: var(--verified-profile);
 }
+
+.topBar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    font-size: var(--logo-font);
+    color: var(--main-text);
+    margin: auto;
+}

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Change profile</title>
-    <link href="../styles/change_profile.css" type="text/css" rel="stylesheet">
+    <title>Add drop</title>
+    <link href="../styles/add_drop.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -28,9 +28,9 @@
                         src="../resources/images/nav_bullet.svg" alt="circle"></li>
                 <li><a class="inactiveLink" href="./market.html">market</a><img
                         src="../resources/images/nav_bullet.svg" alt="circle"></li>
-                <li><a class="inactiveLink" href="drops.html">drops</a><img
+                <li><a class="activeLink" href="drops.html">drops</a><img
                         src="../resources/images/nav_bullet.svg" alt="circle"></li>
-                <li><a class="activeLink" href="./profile.html">profile</a><img
+                <li><a class="inactiveLink" href="./profile.html">profile</a><img
                         src="../resources/images/nav_bullet.svg" alt="circle"></li>
             </ul>
         </nav>
@@ -41,34 +41,25 @@
     <main>
         <div class="topBar">
             <button class="btnBack">BACK</button>
-            <span class="sectionTitle">Change profile</span>
+            <span class="sectionTitle">Add drop</span>
         </div>
 
-        <div class="info">
-            <div class="space left">
-                <div class="profileData">
-                    <p><strong>Nickname: </strong>teafy</p>
-                    <p><strong>Name: </strong>Ivan</p>
-                    <p><strong>Surname: </strong>Orlovskiy</p>
-                    <p><strong>Address: </strong>Belarus, Minsk, st. Vostochnaya</p>
-                    <p><strong>Rating: </strong>9.3</p>
-                    <p><strong>Orders: </strong>15</p>
-                    <p><strong>Registered on: </strong>15 May 2022</p>
-                </div>
-                <div class="actions">
-                    <button class="btnActRed">CHANGE</button>
-                    <button class="btnActRed red">DELETE</button>
-                </div>
+        <div class="form">
+            <div class="formItem">
+                <p class="formTitle">Drop title</p>
+                <label>
+                    <input type="text" class="textEdit" placeholder="Drop title">
+                </label>
             </div>
-            <div class="space right">
-                <div class="buttons">
-                    <div class="btnNeut">
-                        <button>USER AGREEMENT</button>
-                    </div>
-                    <div class="btnNeut">
-                        <button>PRIVACY POLICY</button>
-                    </div>
-                </div>
+            <div class="formItem">
+                <p class="formTitle">Drop description</p>
+                <label>
+                    <textarea name="dropDescription" class="textArea" cols="30" rows="10"
+                              placeholder="Drop description"></textarea>
+                </label>
+            </div>
+            <div class="btnStrongActPos">
+                <button>CONFIRM</button>
             </div>
         </div>
     </main>
