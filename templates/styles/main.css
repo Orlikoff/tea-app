@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    /*Main*/
+    --bg: #6E7152;
+    --main-text: #FFFFFF;
+    --sec-text: #CFD1BE;
+    --logo-text: #2A2C1D;
+
+    /*Common buttons*/
+    --btn-back-bg: #34402E;
+    --btn-back-text: #70B26A;
+    --btn-act-bg: #3F3838;
+    --btn-act-text: #AF7B6A;
+
+    /*Neutral buttons*/
+    --btn-neut-bg: #8E926A;
+    --btn-neut-text: #CFD1BE;
+    --btn-neut-border: #6E7152;
+    --btn-neut-bwidth: 10px;
+
+    /*Navigation*/
+    --nav-inact: #CFD1BE;
+    --nav-act: #FFFFFF;
+
+    /*Main buttons*/
+    --btn-pos-bg: #598E54;
+    --btn-pos-text: #C4FCA8;
+    --btn-neg-bg: #8E5454;
+    --btn-neg-text: #FCA8A8;
+
+    /*Item*/
+    /* --item-bg: #434531; */
+    --item-bg: #202216;
+    --item-dark-bg: #2A2C1D;
+
+    /*Item marks*/
+    --low-profile: #EE6E6E;
+    --medium-profile: #E99D44;
+    --good-profile: #DAE27B;
+    --excellent-profile: #43A933;
+    --verified-profile: #53DBDB;
+
+    /*Strong action buttons*/
+    --btn-strong-act-bg: #3F3838;
+    --btn-strong-act-text: #CFD1BE;
+    --btn-strong-act-border: #514D44;
+    --btn-strong-bwidth: 10px;
+
+    /*Cart counter*/
+    --cart-ctr-bg: #3F3838;
+    --cart-ctr-text: #CFD1BE;
+
+    /*Tea item colors*/
+    --tea-plus: #598E54;
+    --tea-minus: #8E5454;
+    --tea-pending: #548E84;
+    --tea-pending-text: #b3fced;
+
+    /*Button strong pos/neg*/
+    --btn-strong-pos-bg: #598E54;
+    --btn-strong-pos-text: #CFD1BE;
+    --btn-strong-pos-border: #649E5F;
+    --btn-strong-neg-bg: #713434;
+    --btn-strong-neg-text: #DF6F6F;
+    --btn-strong-neg-border: #644646;
+
+    /*Fonts*/
+    --logo-font: 3rem;
+    /* 96px */
+    --nav-font: 1.5rem;
+    --section-title-font: 2rem;
+    --heading-font: 1.5rem;
+    --std-btn-font: 1rem;
+    --med-btn-font: 1.125rem;
+    --big-btn-font: 1.5rem;
+    --sml-btn-font: 0.625rem;
+    --title-font: 1.25rem;
+
+    /*Margins*/
+    --lr-shift: 3rem;
+    --bt-shift: 1.5rem;
+    --tp-shift: 3rem;
+
+    /*Font settings*/
+    --btn-weight: normal;
+}
+
+body {
+    background-color: var(--bg);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--lr-shift);
+}
+
+header {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+
+header p {
+    color: var(--logo-text);
+    width: 30%;
+    display: flex;
+    justify-content: right;
+    font-size: var(--logo-font);
+    font-weight: bold;
+}
+
+header img {
+    width: 7px;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+nav {
+    width: 70%;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav ul {
+    font-size: var(--nav-font);
+    width: 100%;
+    list-style: none;
+}
+
+nav ul li {
+    color: var(--nav-inact);
+    display: inline;
+    margin-right: 3rem;
+    font-weight: 500;
+    border-bottom: 2px solid var(--nav-inact);
+    padding-bottom: 3px;
+    transition: all 0.3s;
+}
+
+nav ul li:hover {
+    color: var(--main-text);
+    padding-bottom: 7px;
+}
+
+nav ul li:hover>img {
+    transform: translateX(150%);
+}
+
+.activeLink {
+    color: var(--main-text);
+}
+
+.inactiveLink {
+    color: var(--secondary);
+}
+
+.bulb {
+    position: absolute;
+    z-index: -1;
+    right: -10%;
+    top: -10%;
+}
+
+.wave {
+    position: absolute;
+    z-index: -2;
+    right: -10%;
+    bottom: -10%;
+}
+
+.leaf {
+    position: absolute;
+    z-index: -1;
+    width: 700px;
+    bottom: 0;
+}
+
+.leafTop {
+    position: absolute;
+    z-index: -1;
+    width: 700px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main {
+    flex-grow: 1;
+}
+
+.btnActRed {
+    font-weight: var(--btn-weight);
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-act-text);
+    background-color: var(--btn-act-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btnActRed:hover {
+    transform: translateY(-5px);
+}
+
+.btnActRed:active {
+    color: var(--btn-act-bg);
+    background-color: var(--btn-act-text);
+}
+
+.listItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 25rem;
+    background-color: var(--item-dark-bg);
+    color: var(--main-text);
+    font-size: var(--std-btn-font);
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+}
+
+.listItem .textSection {
+    display: flex;
+    width: 100%;
+    margin-right: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listItem .price {
+    font-style: italic;
+}
+
+.btnPos {
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    font-weight: var(--btn-weight);
+    padding: 0.5rem 1.5rem;
+    font-size: var(--sml-btn-font);
+    color: var(--btn-pos-text);
+    background-color: var(--btn-pos-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btnPos:hover {
+    transform: translateY(-3px);
+}
+
+.btnPos:active {
+    color: var(--btn-pos-bg);
+    background-color: var(--btn-pos-text);
+}
+
+.btnNeg {
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    font-weight: var(--btn-weight);
+    padding: 0.5rem 1.5rem;
+    font-size: var(--sml-btn-font);
+    color: var(--btn-neg-text);
+    background-color: var(--btn-neg-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btnNeg:hover {
+    transform: translateY(-3px);
+}
+
+.btnNeg:active {
+    color: var(--btn-neg-bg);
+    background-color: var(--btn-neg-text);
+}
+
+.btnNeut {
+    margin-left: 2rem;
+    width: fit-content;
+    border: solid 7px var(--btn-neut-border);
+    padding: 0.3rem;
+    border-radius: 3rem;
+}
+
+.btnNeut button {
+    font-weight: var(--btn-weight);
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: var(--big-btn-font);
+    color: var(--btn-neut-text);
+    background-color: var(--btn-neut-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnNeut:hover button {
+    transform: translateY(-3px);
+}
+
+.btnNeut:active button {
+    color: var(--btn-neut-bg);
+    background-color: var(--btn-neut-text);
+}
+
+.btnBack {
+    font-weight: var(--btn-weight);
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-back-text);
+    background-color: var(--btn-back-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btnBack:hover {
+    transform: translateY(-5px);
+}
+
+.btnBack:active {
+    color: var(--btn-back-bg);
+    background-color: var(--btn-back-text);
+}
+
+.btnStrongAct {
+    margin-left: 2rem;
+    width: fit-content;
+    border: solid 7px var(--btn-strong-act-border);
+    padding: 0.3rem;
+    border-radius: 3rem;
+}
+
+.btnStrongAct button {
+    font-weight: var(--btn-weight);
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-strong-act-text);
+    background-color: var(--btn-strong-act-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnStrongAct:hover button {
+    transform: translateY(-3px);
+}
+
+.btnStrongAct:active button {
+    color: var(--btn-strong-act-bg);
+    background-color: var(--btn-strong-act-text);
+}
+
+.btnStrongActPos {
+    margin-left: 2rem;
+    width: fit-content;
+    border: solid 7px var(--btn-strong-pos-border);
+    padding: 0.3rem;
+    border-radius: 3rem;
+}
+
+.btnStrongActPos button {
+    font-weight: var(--btn-weight);
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-strong-pos-text);
+    background-color: var(--btn-strong-pos-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnStrongActPos:hover button {
+    transform: translateY(-3px);
+}
+
+.btnStrongActPos:active button {
+    color: var(--btn-strong-pos-bg);
+    background-color: var(--btn-strong-pos-text);
+}
+
+
+.btnStrongActNeg {
+    margin-left: 2rem;
+    width: fit-content;
+    border: solid 7px var(--btn-strong-neg-border);
+    padding: 0.3rem;
+    border-radius: 3rem;
+}
+
+.btnStrongActNeg button {
+    font-weight: var(--btn-weight);
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: var(--med-btn-font);
+    color: var(--btn-strong-neg-text);
+    background-color: var(--btn-strong-neg-bg);
+    box-shadow: 0 4px 9px #00000080;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnStrongActNeg:hover button {
+    transform: translateY(-3px);
+}
+
+.btnStrongActNeg:active button {
+    color: var(--btn-strong-neg-bg);
+    background-color: var(--btn-strong-neg-text);
+}

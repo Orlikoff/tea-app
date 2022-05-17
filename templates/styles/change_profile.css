@@ -1,0 +1,85 @@
+@import url(./main.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: var(--bt-shift);
+    background-color: var(--nav-font);
+    margin-top: var(--tp-shift);
+}
+
+.topBar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.btnBack {
+    position: absolute;
+    left: 0;
+}
+
+.sectionTitle {
+    font-size: var(--section-title-font);
+    color: var(--main-text);
+    margin: auto;
+}
+
+.info {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.space {
+    width: 50%;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: end;
+}
+
+.left p {
+    margin-bottom: 1rem;
+    color: var(--logo-text);
+    font-size: var(--title-font);
+}
+
+.profileData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-block: auto;
+    height: 80%;
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    justify-content: left;
+    align-items: end;
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
+
+.btnActRed {
+    font-size: var(--heading-font);
+}
+
+.red {
+    margin-left: 1rem;
+    color: var(--btn-neg-text);
+    background-color: var(--btn-neg-bg);
+}
