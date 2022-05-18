@@ -2,33 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d061eeef-a929-4a01-86e7-7ffc436c6444" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ec23406-3362-444d-b8c2-0e0f41c78506.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ec23406-3362-444d-b8c2-0e0f41c78506/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ec23406-3362-444d-b8c2-0e0f41c78506/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ec23406-3362-444d-b8c2-0e0f41c78506/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ec23406-3362-444d-b8c2-0e0f41c78506/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/add_card.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/add_card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/add_drop.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/add_drop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/add_tea.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/add_tea.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/cards.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/cards.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/0002_rename_user_profile_teaitem_in_cart_of.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teafy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/teafy/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/change_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/change_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/collection.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/collection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/drop_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/drop_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/drops.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/drops.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/index_base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/market.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/market.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/vote.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/vote.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,6 +55,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "SQL Updates",
+    "database.data.extractors.current.id": "SQL Updates",
     "last_opened_file_path": "C:/Users/Orlik/Desktop/teafy/templates/source",
     "list.type.of.created.stylesheet": "CSS"
   },
@@ -115,6 +113,8 @@
       <workItem from="1652731446660" duration="98000" />
       <workItem from="1652798841010" duration="13446000" />
       <workItem from="1652886778517" duration="6769000" />
+      <workItem from="1652902344657" duration="6044000" />
+      <workItem from="1652908591384" duration="4148000" />
     </task>
     <servers />
   </component>

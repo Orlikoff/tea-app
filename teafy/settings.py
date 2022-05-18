@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-h=%y^nx8+msz(__@k5nn0k!iv!rj3qm^ew$)lh&d0ymc*+ac9@
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'blog.Profile'
 
 # Application definition
 
