@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d061eeef-a929-4a01-86e7-7ffc436c6444" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teafy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/teafy/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/add_card.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/add_card.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/add_drop.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/add_drop.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/add_tea.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/add_tea.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/cards.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/cards.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/change_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/change_profile.html" afterDir="false" />
@@ -18,9 +18,11 @@
       <change beforePath="$PROJECT_DIR$/templates/source/drop_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/drop_info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/drops.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/drops.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/index_base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/market.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/market.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/vote.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/vote.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -112,7 +114,7 @@
       <workItem from="1652722475575" duration="8817000" />
       <workItem from="1652731446660" duration="98000" />
       <workItem from="1652798841010" duration="13446000" />
-      <workItem from="1652886778517" duration="5027000" />
+      <workItem from="1652886778517" duration="6769000" />
     </task>
     <servers />
   </component>

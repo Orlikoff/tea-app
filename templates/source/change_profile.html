@@ -1,59 +1,10 @@
+{% extends 'source/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Change profile</title>
-    <link href="{% static 'change_profile.css' %}" type="text/css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-            rel="stylesheet">
-</head>
-<body>
-<!-- Background details -->
-<img
-        src="{% static 'images/behind_logo.svg' %}"
-        class="bulb"
-        alt="behind logo"
-/>
-<img src="{% static 'images/bg_wave.svg' %}" alt="wave" class="wave"/>
-<img src="{% static 'images/tea_leaf.svg' %}" alt="leaf" class="leaf"/>
-<img
-        src="{% static 'images/tea_leaf_top.svg' %}"
-        alt="leaf"
-        class="leafTop"
-/>
+{% block title %}Change profile{% endblock %}
+{% block styles %}{% static 'change_profile.css' %}{% endblock %}
+{% block linkStyle4 %}active{% endblock %}
 
-<div class="container">
-    <!-- DON'T TOUCH -->
-    <header>
-        <nav>
-            <ul>
-                <li>
-                    <a class="activeLink" href="./index.html">info</a
-                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
-                </li>
-                <li>
-                    <a class="inactiveLink" href="./market.html">market</a
-                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
-                </li>
-                <li>
-                    <a class="inactiveLink" href="drops.html">drops</a
-                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
-                </li>
-                <li>
-                    <a class="activeLink" href="./profile.html">profile</a
-                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
-                </li>
-            </ul>
-        </nav>
-        <p>.teafy</p>
-    </header>
-    <!-- DON'T TOUCH -->
-
-    <main>
+{% block content %}
         <div class="topBar">
             <button class="btnBack">BACK</button>
             <span class="sectionTitle">Change profile</span>
@@ -86,9 +37,4 @@
                 </div>
             </div>
         </div>
-    </main>
-
-</div>
-
-</body>
-</html>
+{% endblock %}
