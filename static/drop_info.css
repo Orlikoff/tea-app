@@ -1,0 +1,100 @@
+@import url(./main.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: var(--bt-shift);
+    background-color: var(--nav-font);
+    margin-top: var(--tp-shift);
+}
+
+.topBar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.btnBack {
+    position: absolute;
+    left: 0;
+}
+
+.sectionTitle {
+    font-size: var(--section-title-font);
+    color: var(--main-text);
+    margin: auto;
+}
+
+.wrapper {
+    overflow-y: hidden;
+    width: 100%;
+    height: 20rem;
+    display: flex;
+}
+
+.dropData {
+    height: 100%;
+    color: var(--main-text);
+    width: 70%;
+    font-size: var(--heading-font);
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+}
+
+.votingActions {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.null {
+    margin-left: 0;
+}
+
+.votes {
+    font-size: var(--title-font);
+    font-weight: bold;
+    color: var(--main-text);
+    padding-right: 1rem;
+}
+
+.marbot {
+    margin-bottom: 1rem;
+}
+
+::-webkit-scrollbar {
+    height: 100%;
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    margin-block: 0.5em;
+    border-radius: 1rem;
+    background-color: var(--btn-back-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    border: 4px solid var(--btn-back-bg);
+    border-radius: 1rem;
+    background-color: var(--sec-text);
+}
+
+.date {
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+.date p {
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--main-text);
+    font-size: var(--title-font);
+    color: var(--item-bg);
+}

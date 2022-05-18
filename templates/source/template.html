@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,32 +6,46 @@
     <title>Template</title>
 </head>
 <body>
+<!-- Background details -->
+<img
+        src="{% static 'images/behind_logo.svg' %}"
+        class="bulb"
+        alt="behind logo"
+/>
+<img src="{% static 'images/bg_wave.svg' %}" alt="wave" class="wave"/>
+<img src="{% static 'images/tea_leaf.svg' %}" alt="leaf" class="leaf"/>
+<img
+        src="{% static 'images/tea_leaf_top.svg' %}"
+        alt="leaf"
+        class="leafTop"
+/>
 
-    <!-- Background details -->
-    <img src="../resources/images/behind_logo.svg" class="bulb" alt="behind logo">
-    <img src="../resources/images/bg_wave.svg" alt="wave" class="wave">
-    <img src="../resources/images/tea_leaf.svg" alt="leaf" class="leaf">
-    <img src="../resources/images/tea_leaf_top.svg" alt="leaf" class="leafTop">
-
-    <div class="container">
-
-        <!-- DON'T TOUCH -->
-        <header>
-            <nav>
-                <ul>
-                    <li><a class="inactiveLink" href="./index.html">info</a><img
-                            src="../resources/images/nav_bullet.svg" alt="circle"></li>
-                    <li><a class="inactiveLink" href="./market.html">market</a><img
-                            src="../resources/images/nav_bullet.svg" alt="circle"></li>
-                    <li><a class="inactiveLink" href="drops.html">drops</a><img
-                            src="../resources/images/nav_bullet.svg" alt="circle"></li>
-                    <li><a class="inactiveLink" href="./profile.html">profile</a><img
-                            src="../resources/images/nav_bullet.svg" alt="circle"></li>
-                </ul>
-            </nav>
-            <p>.teafy</p>
-        </header>
-        <!-- DON'T TOUCH -->
+<div class="container">
+    <!-- DON'T TOUCH -->
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a class="activeLink" href="./index.html">info</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+                <li>
+                    <a class="inactiveLink" href="./market.html">market</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+                <li>
+                    <a class="inactiveLink" href="drops.html">drops</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+                <li>
+                    <a class="inactiveLink" href="./profile.html">profile</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+            </ul>
+        </nav>
+        <p>.teafy</p>
+    </header>
+    <!-- DON'T TOUCH -->
 
         <main>
             <div class="topBar">

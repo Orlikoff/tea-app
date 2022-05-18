@@ -2,21 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d061eeef-a929-4a01-86e7-7ffc436c6444" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teafy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/teafy/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teafy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/teafy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/add_card.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/add_card.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/add_drop.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/add_drop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/add_tea.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/add_tea.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/cards.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/cards.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/change_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/change_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/collection.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/collection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/drop_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/drop_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/drops.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/drops.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/market.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/market.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/vote.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/vote.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseLocalColorSettings">
-    <colors>
-      <entry key="76aa5736-4610-4dd2-bad2-b32439e63bbb" value="3d9e36" />
-    </colors>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Orlik/Desktop/teafy/templates/styles",
+    "last_opened_file_path": "C:/Users/Orlik/Desktop/teafy/templates/source",
     "list.type.of.created.stylesheet": "CSS"
   },
   "keyToStringList": {
@@ -58,8 +68,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Orlik\Desktop\teafy\templates\styles" />
       <recent name="C:\Users\Orlik\Desktop\teafy\templates\source" />
+      <recent name="C:\Users\Orlik\Desktop\teafy\templates\styles" />
     </key>
   </component>
   <component name="RunManager">
@@ -101,11 +111,23 @@
       <workItem from="1652621102208" duration="6124000" />
       <workItem from="1652722475575" duration="8817000" />
       <workItem from="1652731446660" duration="98000" />
-      <workItem from="1652798841010" duration="13344000" />
+      <workItem from="1652798841010" duration="13446000" />
+      <workItem from="1652886778517" duration="5027000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Cards</title>
-    <link href="../styles/cards.css" type="text/css" rel="stylesheet">
+    <link href="{% static 'cards.css' %}" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -11,27 +12,41 @@
             rel="stylesheet">
 </head>
 <body>
-
 <!-- Background details -->
-<img src="../resources/images/behind_logo.svg" class="bulb" alt="behind logo">
-<img src="../resources/images/bg_wave.svg" alt="wave" class="wave">
-<img src="../resources/images/tea_leaf.svg" alt="leaf" class="leaf">
-<img src="../resources/images/tea_leaf_top.svg" alt="leaf" class="leafTop">
+<img
+        src="{% static 'images/behind_logo.svg' %}"
+        class="bulb"
+        alt="behind logo"
+/>
+<img src="{% static 'images/bg_wave.svg' %}" alt="wave" class="wave"/>
+<img src="{% static 'images/tea_leaf.svg' %}" alt="leaf" class="leaf"/>
+<img
+        src="{% static 'images/tea_leaf_top.svg' %}"
+        alt="leaf"
+        class="leafTop"
+/>
 
 <div class="container">
-
     <!-- DON'T TOUCH -->
     <header>
         <nav>
             <ul>
-                <li><a class="inactiveLink" href="./index.html">info</a><img
-                        src="../resources/images/nav_bullet.svg" alt="circle"></li>
-                <li><a class="inactiveLink" href="./market.html">market</a><img
-                        src="../resources/images/nav_bullet.svg" alt="circle"></li>
-                <li><a class="inactiveLink" href="drops.html">drops</a><img
-                        src="../resources/images/nav_bullet.svg" alt="circle"></li>
-                <li><a class="activeLink" href="./profile.html">profile</a><img
-                        src="../resources/images/nav_bullet.svg" alt="circle"></li>
+                <li>
+                    <a class="activeLink" href="{% url 'info' %}">info</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+                <li>
+                    <a class="inactiveLink" href="{% url 'market' %}">market</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+                <li>
+                    <a class="inactiveLink" href="{% url 'drops' %}">drops</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+                <li>
+                    <a class="inactiveLink" href="{% url 'profile' %}">profile</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
             </ul>
         </nav>
         <p>.teafy</p>

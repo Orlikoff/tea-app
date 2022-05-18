@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Teafy{% endblock %}</title>
+    <link href="{% block styles %}../styles/index.css{% endblock %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'index.css' %}" type="text/css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet"
+    />
+</head>
+<style>
+    .inactive {
+        color: var(--nav-inact);
+    }
+    .active {
+        color: var(--main-text);
+    }
+</style>
+<body>
+<!-- Background details -->
+<img
+        src="{% static 'images/behind_logo.svg' %}"
+        class="bulb"
+        alt="behind logo"
+/>
+<img src="{% static 'images/bg_wave.svg' %}" alt="wave" class="wave"/>
+<img src="{% static 'images/tea_leaf.svg' %}" alt="leaf" class="leaf"/>
+<img
+        src="{% static 'images/tea_leaf_top.svg' %}"
+        alt="leaf"
+        class="leafTop"
+/>
+
+<div class="container">
+    <!-- DON'T TOUCH -->
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a class="{% block linkStyle1 %}inactive{% endblock %}" href="{% url 'info' %}">info</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+                <li>
+                    <a class="{% block linkStyle2 %}inactive{% endblock %}" href="{% url 'market' %}">market</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+                <li>
+                    <a class="{% block linkStyle3 %}inactive{% endblock %}" href="{% url 'drops' %}">drops</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+                <li>
+                    <a class="{% block linkStyle4 %}inactive{% endblock %}" href="{% url 'profile' %}">profile</a
+                    ><img src="{% static 'images/nav_bullet.svg' %}" alt="circle"/>
+                </li>
+            </ul>
+        </nav>
+        <p>.teafy</p>
+    </header>
+    <!-- DON'T TOUCH -->
+
+    <main>
+        {% block content %}
+            HERE CONTENT
+        {% endblock %}
+    </main>
+</div>
+</body>
+</html>
