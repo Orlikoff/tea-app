@@ -69,14 +69,20 @@ class Profile(AbstractBaseUser):
 
 
 class TeaItem(models.Model):
+    MAR = 'MARKETPLACE'
+    COL = 'COLLECTION'
+    status_choices = (
+        (COL, 'in collection'),
+        (MAR, 'in marketplace')
+    )
     previous_owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True,
                                        blank=True)
     current_owner = models.ForeignKey(Profile, related_name='tea_collection', on_delete=models.SET_NULL, null=True)
-    in_cart_of = models.ForeignKey(Profile, related_name='cart_items', on_delete=models.SET_NULL, null=True)
+    in_cart_of = models.ForeignKey(Profile, related_name='cart_items', on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=20)
     origin_country = models.CharField(max_length=20)
     price = models.FloatField()
-    status = models.CharField(max_length=20)
+    status = models.CharField(max_length=20, choices=status_choices, default=MAR)
     voted = models.BooleanField()
 
 

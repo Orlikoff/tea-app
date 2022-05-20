@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
+from .models import TeaItem
 
 
 class IndexPageView(View):
@@ -32,8 +33,14 @@ class ProfilePageView(View):
     template_name = 'source/profile.html'
 
     def get(self, request):
-        context = {}
+        context = {
+            'tea_sold': ProfilePageView.get_sold_items(request)
+        }
         return render(request, self.template_name, context)
+
+    @staticmethod
+    def get_sold_items(request):
+        return request.user.tea_collection.filter(status=TeaItem.MAR)
 
 
 class RegisterPageView(View):
@@ -87,3 +94,21 @@ class DetailsProfileView(View):
     def get(self, request):
         context = {}
         return render(request, self.template_name, context)
+
+
+class CollectionView(View):
+    template_name = 'source/collection.html'
+
+    def get(self, request):
+        context = {}
+        return render(request, self.template_name, context)
+
+
+class ItemRemover(View):
+    def get(self, request, tea_id):
+        item = TeaItem.objects.get(id=tea_id)
+        item.status = TeaItem.COL
+        item.save(update_fields=['status'])
+        return render(request, ProfilePageView.template_name, context={
+            'tea_sold': ProfilePageView.get_sold_items(request)
+        })

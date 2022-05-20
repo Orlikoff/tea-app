@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d061eeef-a929-4a01-86e7-7ffc436c6444" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/change_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/change_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/collection.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/collection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,23 +41,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Updates&quot;,
-    &quot;database.data.extractors.current.id&quot;: &quot;SQL Updates&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Orlik/Desktop/teafy/templates/styles&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "SQL Updates",
+    "database.data.extractors.current.id": "SQL Updates",
+    "last_opened_file_path": "C:/Users/Orlik/Desktop/teafy/templates/styles",
+    "list.type.of.created.stylesheet": "CSS",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Orlik\Desktop\teafy\templates\styles" />
@@ -105,7 +109,8 @@
       <workItem from="1652902344657" duration="6044000" />
       <workItem from="1652908591384" duration="4148000" />
       <workItem from="1653040745552" duration="10163000" />
-      <workItem from="1653057476973" duration="1704000" />
+      <workItem from="1653057476973" duration="2360000" />
+      <workItem from="1653080797050" duration="3105000" />
     </task>
     <servers />
   </component>

@@ -6,8 +6,10 @@
 
 {% block content %}
     <div class="topBar">
-        <button class="btnBack">BACK</button>
-        <span class="sectionTitle">Change profile</span>
+        <form action="javascript:history.go(-1)">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">Profile details</span>
     </div>
 
     <div class="info">
