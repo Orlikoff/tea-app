@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
 
 
@@ -66,8 +66,19 @@ class LoginPageView(View):
     template_name = 'source/login.html'
 
     def get(self, request):
-        context = {}
-        return render(request, self.template_name, context)
+        return render(request, self.template_name, {})
+
+    def post(self, request):
+        if request.method == 'POST':
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            user = authenticate(email=email, password=password)
+            if user is not None:
+                logout(request)
+                login(request, user)
+                return redirect('/info')
+
+        return render(request, self.template_name, {})
 
 
 class DetailsProfileView(View):

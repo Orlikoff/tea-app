@@ -4,11 +4,8 @@
     <list default="true" id="d061eeef-a929-4a01-86e7-7ffc436c6444" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teafy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/teafy/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/styles/login.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +105,7 @@
       <workItem from="1652902344657" duration="6044000" />
       <workItem from="1652908591384" duration="4148000" />
       <workItem from="1653040745552" duration="10163000" />
-      <workItem from="1653057476973" duration="420000" />
+      <workItem from="1653057476973" duration="1704000" />
     </task>
     <servers />
   </component>

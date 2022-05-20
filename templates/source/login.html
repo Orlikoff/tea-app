@@ -14,23 +14,15 @@
             <div class="formItem">
                 <p class="formTitle">Email</p>
                 <label>
-                    {{ form.email }}
+                    <input name="email" type="email" class="textEdit" placeholder="Email" required>
                 </label>
-                <div class="formError">
-                    {{ form.errors.email }}
-                </div>
             </div>
-
             <div class="formItem">
                 <p class="formTitle">Password</p>
                 <label>
-                    {{ form.password1 }}
+                    <input name="password" type="password" class="textEdit" placeholder="Password" required>
                 </label>
-                <div class="formError">
-                    {{ form.errors.password1 }}
-                </div>
             </div>
-
             <div class="btnStrongActPos">
                 <button>CONFIRM</button>
             </div>
