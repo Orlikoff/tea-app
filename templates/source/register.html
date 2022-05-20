@@ -5,8 +5,78 @@
 {% block linkStyle4 %}active{% endblock %}
 
 {% block content %}
-            <div class="topBar">
-                <button class="btnBack">BACK</button>
-                <span class="sectionTitle">Cart</span>
+    <div class="topBar">
+        <span class="sectionTitle">Register</span>
+    </div>
+    <div class="form">
+        {#        <form method="post" action=".">#}
+        {#            {% csrf_token %}#}
+        {#            {{ form.as_p }}#}
+        {#            <button type="submit">Sign Up</button>#}
+        {#        </form>#}
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form">
+                <div class="formItem">
+                    <p class="formTitle">Email</p>
+                    <label>
+                        {{ form.email }}
+                    </label>
+                    <div class="formError">
+                        {{ form.errors.email }}
+                    </div>
+                </div>
+                <div class="formItem">
+                    <p class="formTitle">Name</p>
+                    <label>
+                        {{ form.name }}
+                    </label>
+                    <div class="formError">
+                        {{ form.errors.name }}
+                    </div>
+                </div>
+                <div class="formItem">
+                    <p class="formTitle">Surname</p>
+                    <label>
+                        {{ form.surname }}
+                    </label>
+                    <div class="formError">
+                        {{ form.errors.surname }}
+                    </div>
+                </div>
+                <div class="formItem">
+                    <p class="formTitle">Address</p>
+                    <label>
+                        {{ form.address }}
+                    </label>
+                    <div class="formError">
+                        {{ form.errors.address }}
+                    </div>
+                </div>
+                <div class="formItem">
+                    <p class="formTitle">Password</p>
+                    <label>
+                        {{ form.password1 }}
+                    </label>
+                    <div class="formError">
+                        {{ form.errors.password1 }}
+                    </div>
+                </div>
+                <div class="formItem">
+                    <p class="formTitle">Confirm</p>
+                    <label>
+                        {{ form.password2 }}
+                    </label>
+                    <div class="formError">
+                        {{ form.errors.password2 }}
+                    </div>
+                </div>
+
+                <div class="btnStrongActPos">
+                    <button>CONFIRM</button>
+                </div>
             </div>
+        </form>
+    </div>
 {% endblock %}

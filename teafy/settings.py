@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'teafy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '99999',
-        'HOST': '127.0.0.1',
+        'NAME': 'degs78c4d2lpgn',
+        'USER': 'nceiyfrdosqhug',
+        'PASSWORD': 'b730a2673b9c7d0c64d179742f173fe58ac058a031bc3259c3cc4bc522deb143',
+        'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }

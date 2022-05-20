@@ -1,12 +1,34 @@
 {% extends 'source/base.html' %}
 {% load static %}
-{% block title %}Login{% endblock %}
+{% block title %}Add card{% endblock %}
 {% block styles %}{% static 'login.css' %}{% endblock %}
 {% block linkStyle4 %}active{% endblock %}
 
 {% block content %}
             <div class="topBar">
-                <button class="btnBack">BACK</button>
-                <span class="sectionTitle">Cart</span>
+                <span class="sectionTitle">Login</span>
+            </div>
+            <div class="form">
+                <div class="formItem">
+                    <p class="formTitle">Card number</p>
+                    <label>
+                        <input type="text" class="textEdit" placeholder="Card number">
+                    </label>
+                </div>
+                <div class="formItem">
+                    <p class="formTitle">Card date</p>
+                    <label>
+                        <input type="text" class="textEdit" placeholder="Card date">
+                    </label>
+                </div>
+                <div class="formItem">
+                    <p class="formTitle">CVV code</p>
+                    <label>
+                        <input type="text" class="textEdit" placeholder="CVV code">
+                    </label>
+                </div>
+                <div class="btnStrongActPos">
+                    <button>CONFIRM</button>
+                </div>
             </div>
 {% endblock %}
