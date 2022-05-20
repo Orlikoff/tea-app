@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.core.exceptions import ValidationError
 
 from .models import Profile
@@ -73,3 +73,21 @@ class SignUpForm(UserCreationForm):
             self.cleaned_data['password1']
         )
         return user
+
+
+class LoginForm(AuthenticationForm):
+    error_css_class = 'formError'
+
+    email = forms.EmailField(label='email', max_length=255, widget=forms.EmailInput(
+        attrs={
+            'placeholder': 'Email',
+            'class': 'textEdit'
+        }
+    ))
+
+    password1 = forms.CharField(label='password', widget=forms.PasswordInput(
+        attrs={
+            'placeholder': 'Password',
+            'class': 'textEdit'
+        }
+    ))

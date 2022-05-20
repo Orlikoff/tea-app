@@ -26,6 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'blog.Profile'
+LOGOUT_REDIRECT_URL = '/info'
+LOGIN_URL = '/login'
 
 # Application definition
 

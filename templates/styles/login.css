@@ -46,6 +46,18 @@ main {
     margin-bottom: 1rem;
 }
 
+.formError {
+    display: flex;
+    justify-content: left;
+    font-weight: bold;
+    color: var(--btn-strong-neg-bg);
+    margin-left: 1rem;
+}
+
+.formError ul {
+    list-style-type: none;
+}
+
 .btnStrongActPos {
     margin-left: 0;
 }

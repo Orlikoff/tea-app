@@ -2,45 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d061eeef-a929-4a01-86e7-7ffc436c6444" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3428fa5f-9aa6-4061-9891-ab9fd09bb136.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3428fa5f-9aa6-4061-9891-ab9fd09bb136/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3428fa5f-9aa6-4061-9891-ab9fd09bb136/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3428fa5f-9aa6-4061-9891-ab9fd09bb136/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3428fa5f-9aa6-4061-9891-ab9fd09bb136/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/534ac1e4-f641-4acf-8bd1-24a4ca5a4774.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/534ac1e4-f641-4acf-8bd1-24a4ca5a4774/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/534ac1e4-f641-4acf-8bd1-24a4ca5a4774/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/534ac1e4-f641-4acf-8bd1-24a4ca5a4774/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/534ac1e4-f641-4acf-8bd1-24a4ca5a4774/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bed9031e-c036-4d57-a7e5-ddef18a34500.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bed9031e-c036-4d57-a7e5-ddef18a34500/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bed9031e-c036-4d57-a7e5-ddef18a34500/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bed9031e-c036-4d57-a7e5-ddef18a34500/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bed9031e-c036-4d57-a7e5-ddef18a34500/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c6113c48-d7ac-4b64-b4e6-de06fa432bb5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c6113c48-d7ac-4b64-b4e6-de06fa432bb5/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c6113c48-d7ac-4b64-b4e6-de06fa432bb5/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c6113c48-d7ac-4b64-b4e6-de06fa432bb5/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c6113c48-d7ac-4b64-b4e6-de06fa432bb5/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/0002_alter_profile_email_alter_profile_password.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/0003_alter_profile_password.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/0004_alter_profile_password.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teafy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/teafy/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/change_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/change_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/source/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/styles/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/styles/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/styles/register.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,23 +41,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "SQL Updates",
-    "database.data.extractors.current.id": "SQL Updates",
-    "last_opened_file_path": "C:/Users/Orlik/Desktop/teafy/templates/styles",
-    "list.type.of.created.stylesheet": "CSS"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Updates&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;SQL Updates&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Orlik/Desktop/teafy/templates/styles&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Orlik\Desktop\teafy\templates\styles" />
@@ -140,6 +108,7 @@
       <workItem from="1652902344657" duration="6044000" />
       <workItem from="1652908591384" duration="4148000" />
       <workItem from="1653040745552" duration="10163000" />
+      <workItem from="1653057476973" duration="420000" />
     </task>
     <servers />
   </component>

@@ -1,34 +1,39 @@
 {% extends 'source/base.html' %}
 {% load static %}
-{% block title %}Add card{% endblock %}
+{% block title %}Login{% endblock %}
 {% block styles %}{% static 'login.css' %}{% endblock %}
 {% block linkStyle4 %}active{% endblock %}
 
 {% block content %}
-            <div class="topBar">
-                <span class="sectionTitle">Login</span>
-            </div>
-            <div class="form">
-                <div class="formItem">
-                    <p class="formTitle">Card number</p>
-                    <label>
-                        <input type="text" class="textEdit" placeholder="Card number">
-                    </label>
-                </div>
-                <div class="formItem">
-                    <p class="formTitle">Card date</p>
-                    <label>
-                        <input type="text" class="textEdit" placeholder="Card date">
-                    </label>
-                </div>
-                <div class="formItem">
-                    <p class="formTitle">CVV code</p>
-                    <label>
-                        <input type="text" class="textEdit" placeholder="CVV code">
-                    </label>
-                </div>
-                <div class="btnStrongActPos">
-                    <button>CONFIRM</button>
+    <div class="topBar">
+        <span class="sectionTitle">Login</span>
+    </div>
+    <div class="form">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="formItem">
+                <p class="formTitle">Email</p>
+                <label>
+                    {{ form.email }}
+                </label>
+                <div class="formError">
+                    {{ form.errors.email }}
                 </div>
             </div>
+
+            <div class="formItem">
+                <p class="formTitle">Password</p>
+                <label>
+                    {{ form.password1 }}
+                </label>
+                <div class="formError">
+                    {{ form.errors.password1 }}
+                </div>
+            </div>
+
+            <div class="btnStrongActPos">
+                <button>CONFIRM</button>
+            </div>
+        </form>
+    </div>
 {% endblock %}
