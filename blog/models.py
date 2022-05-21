@@ -71,7 +71,9 @@ class Profile(AbstractBaseUser):
 class TeaItem(models.Model):
     MAR = 'MARKETPLACE'
     COL = 'COLLECTION'
+    PEN = 'PENDING'
     status_choices = (
+        (PEN, 'pending'),
         (COL, 'in collection'),
         (MAR, 'in marketplace')
     )

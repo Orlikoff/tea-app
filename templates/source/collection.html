@@ -14,99 +14,22 @@
 
     <div class="gridWrapper">
         <div class="items">
-            <div class="listItem">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
+            {% for tea_item in tea_items %}
+
+                <div class="listItem {% if tea_item.status == 'PENDING' %}pending{% endif %}">
+                    <div class="textSection">
+                        <p class="title">{{ tea_item.name }}, {{ tea_item.origin_country }}</p>
+                    </div>
+                    {% if not tea_item.voted and not tea_item.previous_owner is None and tea_item.previous_owner != tea_item.current_owner %}
+                        <form action="vote/{{ tea_item.id }}">
+                            <button class="btnPos customBtn voteBnt">{{ tea_item.id }}</button>
+                        </form>
+                    {% endif %}
+                    <button class="btnPos customBtn">SHIP</button>
+                    <button class="btnNeg customBtn">REMOVE</button>
                 </div>
-                <button class="btnPos customBtn voteBnt">VOTE</button>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn voteBnt">VOTE</button>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem pending">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn voteBnt">VOTE</button>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn voteBnt">VOTE</button>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem pending">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn voteBnt">VOTE</button>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn voteBnt">VOTE</button>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem pending">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn voteBnt">VOTE</button>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn voteBnt">VOTE</button>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
-            <div class="listItem pending">
-                <div class="textSection">
-                    <p class="title">Babylon, Indian tea</p>
-                </div>
-                <button class="btnPos customBtn voteBnt">VOTE</button>
-                <button class="btnPos customBtn">SHIP</button>
-                <button class="btnNeg customBtn">REMOVE</button>
-            </div>
+
+            {% endfor %}
         </div>
     </div>
     <div class="wrapper">

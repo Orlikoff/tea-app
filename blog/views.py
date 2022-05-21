@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
-from .models import TeaItem
+from .models import TeaItem, Profile
 
 
 class IndexPageView(View):
@@ -100,8 +100,15 @@ class CollectionView(View):
     template_name = 'source/collection.html'
 
     def get(self, request):
-        context = {}
+        context = {
+            'tea_items': CollectionView.get_collection_items(request)
+        }
         return render(request, self.template_name, context)
+
+    @staticmethod
+    def get_collection_items(request):
+        return request.user.tea_collection.filter(status=TeaItem.COL) | \
+               request.user.tea_collection.filter(status=TeaItem.PEN)
 
 
 class ItemRemover(View):
@@ -112,3 +119,43 @@ class ItemRemover(View):
         return render(request, ProfilePageView.template_name, context={
             'tea_sold': ProfilePageView.get_sold_items(request)
         })
+
+
+class ProfileRemoverView(View):
+    def get(self, request, profile_id):
+        logout(request)
+        Profile.objects.filter(id=profile_id).delete()
+        return render(request, IndexPageView.template_name, {})
+
+
+class VoteView(View):
+    template_name = 'source/vote.html'
+
+    def get(self, request, tea_id):
+        context = {
+            'tea_item': VoteView.get_tea_item(request, tea_id)
+        }
+        return render(request, self.template_name, context)
+
+    @staticmethod
+    def get_tea_item(request, tea_id):
+        return request.user.tea_collection.get(id=tea_id)
+
+
+class VoteForView(View):
+    coef = 10
+
+    def post(self, request, tea_id):
+        mark = int(request.POST.get('mark'))
+        mark = (mark-5)/self.coef
+        tea_item = TeaItem.objects.get(id=tea_id)
+        previous_owner = tea_item.previous_owner
+        previous_owner.rating += mark
+        previous_owner.save(update_fields=['rating'])
+        tea_item.voted = True
+        tea_item.save(update_fields=['voted'])
+        context = {
+            'tea_items': CollectionView.get_collection_items(request)
+        }
+        return render(request, CollectionView.template_name, context)
+

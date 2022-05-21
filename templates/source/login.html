@@ -26,6 +26,19 @@
             <div class="btnStrongActPos">
                 <button>CONFIRM</button>
             </div>
+            <style>
+                .link {
+                    margin-top: 1rem;
+                }
+
+                .link a {
+                    font-size: var(--title-font);
+                    color: var(--main-text);
+                }
+            </style>
+            <div class="link">
+                <a href="{% url 'signup' %}">Don't have an account?</a>
+            </div>
         </form>
     </div>
 {% endblock %}

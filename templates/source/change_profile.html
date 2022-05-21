@@ -27,7 +27,9 @@
                 <form action="{% url 'logout' %}?next=/">
                     <button class="btnActRed">LOG OUT</button>
                 </form>
-                <button class="btnActRed red">DELETE</button>
+                <form action="deleteProfile/{{ user.id }}">
+                    <button class="btnActRed red">DELETE</button>
+                </form>
             </div>
         </div>
         <div class="space right">

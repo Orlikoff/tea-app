@@ -14,5 +14,8 @@ urlpatterns = [
     path('register', views.RegisterPageView.as_view(), name='signup'),
     path('detailsProfile', views.DetailsProfileView.as_view(), name='detailsProfile'),
     path('collection', views.CollectionView.as_view(), name='collection'),
-    path('removeFromSelling/<int:tea_id>', views.ItemRemover.as_view(), name='removeItem')
+    path('removeFromSelling/<int:tea_id>', views.ItemRemover.as_view(), name='removeItem'),
+    path('deleteProfile/<int:profile_id>', views.ProfileRemoverView.as_view(), name='deleteProfile'),
+    path('vote/<int:tea_id>', views.VoteView.as_view(), name='vote'),
+    path('vote/voteFor/<int:tea_id>', views.VoteForView.as_view(), name='voteFor'),
 ]

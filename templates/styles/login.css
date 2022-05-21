@@ -82,3 +82,13 @@ main {
     font-size: var(--med-btn-font);
     color: var(--nav-inact);
 }
+
+.link {
+    color: var(--main-text);
+}
+
+.link a {
+    font-size: var(--heading-font);
+    color: var(--main-text);
+    text-decoration: none;
+}
