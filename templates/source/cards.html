@@ -5,41 +5,33 @@
 {% block linkStyle4 %}active{% endblock %}
 
 {% block content %}
-        <div class="topBar">
+    <div class="topBar">
+        <form action="{% url 'profile' %}">
             <button class="btnBack">BACK</button>
-            <span class="sectionTitle">Cards</span>
+        </form>
+        <span class="sectionTitle">Cards</span>
+    </div>
+    <div class="cards">
+        <div class="cardItems">
+            {% for card in card_items %}
+                <div class="listItem">
+                    <div class="textSection">
+                        <p class="cardNumber">{{ card.number }}</p>
+                        <span class="chooser {% if card.active %}chosen{% endif %}"></span>
+                    </div>
+                    <form action="chooseCard/{{ card.id }}">
+                        <button class="btnPos">CHOOSE</button>
+                    </form>
+                    <form action="removeCard/{{ card.id }}">
+                        <button class="btnNeg">REMOVE</button>
+                    </form>
+                </div>
+            {% endfor %}
         </div>
-        <div class="cards">
-            <div class="cardItems">
-                <div class="listItem">
-                    <div class="textSection">
-                        <p class="cardNumber">**** **** **** 3422</p>
-                        <span class="chooser chosen"></span>
-                    </div>
-                    <button class="btnPos">CHOOSE</button>
-                    <button class="btnNeg">REMOVE</button>
-                </div>
-                <div class="listItem">
-                    <div class="textSection">
-                        <p class="cardNumber">**** **** **** 3422</p>
-                        <span class="chooser"></span>
-                    </div>
-                    <button class="btnPos">CHOOSE</button>
-                    <button class="btnNeg">REMOVE</button>
-                </div>
-                <div class="listItem">
-                    <div class="textSection">
-                        <p class="cardNumber">**** **** **** 3422</p>
-                        <span class="chooser"></span>
-                    </div>
-                    <button class="btnPos">CHOOSE</button>
-                    <button class="btnNeg">REMOVE</button>
-                </div>
-            </div>
-            <div class="btnStrongAct">
-                <form action="./add_card.html">
-                    <button>ADD CARD</button>
-                </form>
-            </div>
+        <div class="btnStrongAct">
+            <form action=".{% url 'addCard' %}">
+                <button>ADD CARD</button>
+            </form>
         </div>
+    </div>
 {% endblock %}

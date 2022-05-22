@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
-from .models import TeaItem, Profile
+from .models import TeaItem, Profile, DebitCard
+
+ADMIN_ACCOUNT = 'studyorlik@gmail.com'
 
 
 class IndexPageView(View):
@@ -147,7 +149,11 @@ class VoteForView(View):
 
     def post(self, request, tea_id):
         mark = int(request.POST.get('mark'))
-        mark = (mark-5)/self.coef
+        if not 0 <= mark <= 10:
+            return render(request, CollectionView.template_name, {
+                'tea_items': CollectionView.get_collection_items(request)
+            })
+        mark = (mark - 5) / self.coef
         tea_item = TeaItem.objects.get(id=tea_id)
         previous_owner = tea_item.previous_owner
         previous_owner.rating += mark
@@ -159,3 +165,129 @@ class VoteForView(View):
         }
         return render(request, CollectionView.template_name, context)
 
+
+class ShipView(View):
+    def get(self, request, tea_id):
+        TeaItem.objects.get(id=tea_id).delete()
+        return render(request, CollectionView.template_name, {
+            'tea_items': CollectionView.get_collection_items(request)
+        })
+
+
+class TeaRemoverView(View):
+    def get(self, request, tea_id):
+        tea_item = TeaItem.objects.get(id=tea_id)
+        tea_item.current_owner = None
+        tea_item.save(update_fields=['current_owner'])
+        return render(request, CollectionView.template_name, {
+            'tea_items': CollectionView.get_collection_items(request)
+        })
+
+
+class AddTeaView(View):
+    template_name = 'source/add_tea.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {})
+
+    def post(self, request):
+        tea_name = request.POST.get('tea_name')
+        country_of_origin = request.POST.get('country')
+        price = float(request.POST.get('price'))
+
+        package_id = request.POST.get('package_id')
+
+        if not tea_name or not country_of_origin or not self.validate_package(package_id) or price < 0:
+            return render(request, self.template_name, {})
+
+        TeaItem.objects.create(
+            previous_owner=None,
+            current_owner=request.user,
+            in_cart_of=None,
+            name=tea_name,
+            origin_country=country_of_origin,
+            price=price,
+            status=TeaItem.COL,
+            voted=False
+        )
+
+        return render(request, CollectionView.template_name, {
+            'tea_items': CollectionView.get_collection_items(request)
+        })
+
+    def validate_package(self, package_id):
+        return True
+
+
+class CardsView(View):
+    template_name = 'source/cards.html'
+
+    def get(self, request):
+        context = {
+            'card_items': self.get_cards(request)
+        }
+
+        return render(request, self.template_name, context)
+
+    @staticmethod
+    def get_cards(request):
+        return request.user.cards.all().order_by('-id')
+
+
+class AddCardView(View):
+    template_name = 'source/add_card.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {})
+
+    def post(self, request):
+        card_number = request.POST.get('card_number')
+        card_date = request.POST.get('card_date')
+        card_cvv = int(request.POST.get('card_cvv'))
+
+        if not card_number or not card_date or not card_cvv or card_cvv < 0 or len(request.user.cards.all()) >= 3 or \
+                self.check_for_double(request, card_number):
+            return redirect('cards')
+
+        for card_item in request.user.cards.all():
+            card_item.active = False
+            card_item.save(update_fields=['active'])
+
+        DebitCard.objects.create(
+            owner=request.user,
+            number=card_number,
+            date=card_date,
+            cvv=card_cvv,
+            active=True
+        )
+
+        return redirect('cards')
+
+    @staticmethod
+    def check_for_double(request, number):
+        for card_item in request.user.cards.all():
+            if card_item.number == number:
+                return True
+        return False
+
+
+class ChooseCardView(View):
+    def get(self, request, card_id):
+        for card_item in request.user.cards.all():
+            card_item.active = False
+            card_item.save(update_fields=['active'])
+        card = DebitCard.objects.get(id=card_id)
+        card.active = True
+        card.save(update_fields=['active'])
+        return redirect('cards')
+
+
+class RemoveCardView(View):
+    def get(self, request, card_id):
+        DebitCard.objects.get(id=card_id).delete()
+        if request.user.cards.filter(active=True).count() == 0:
+            if request.user.cards.all().count() > 0:
+                card = request.user.cards.all()[0]
+                card.active = True
+                card.save(update_fields=['active'])
+        return redirect('cards')

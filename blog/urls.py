@@ -18,4 +18,11 @@ urlpatterns = [
     path('deleteProfile/<int:profile_id>', views.ProfileRemoverView.as_view(), name='deleteProfile'),
     path('vote/<int:tea_id>', views.VoteView.as_view(), name='vote'),
     path('vote/voteFor/<int:tea_id>', views.VoteForView.as_view(), name='voteFor'),
+    path('shipTea/<int:tea_id>', views.ShipView.as_view(), name='shipTea'),
+    path('removeTea/<int:tea_id>', views.TeaRemoverView.as_view(), name='removeTea'),
+    path('addTea', views.AddTeaView.as_view(), name='addTea'),
+    path('cards', views.CardsView.as_view(), name='cards'),
+    path('addCard', views.AddCardView.as_view(), name='addCard'),
+    path('chooseCard/<int:card_id>', views.ChooseCardView.as_view(), name='chooseCard'),
+    path('removeCard/<int:card_id>', views.RemoveCardView.as_view(), name='removeCard'),
 ]

@@ -6,7 +6,7 @@
 
 {% block content %}
     <div class="topBar">
-        <form action="javascript:history.go(-1)">
+        <form action="{% url 'profile' %}">
             <button class="btnBack">BACK</button>
         </form>
         <span class="sectionTitle">Tea collection</span>
@@ -25,8 +25,12 @@
                             <button class="btnPos customBtn voteBnt">{{ tea_item.id }}</button>
                         </form>
                     {% endif %}
-                    <button class="btnPos customBtn">SHIP</button>
-                    <button class="btnNeg customBtn">REMOVE</button>
+                    <form action="shipTea/{{ tea_item.id }}">
+                        <button class="btnPos customBtn">SHIP</button>
+                    </form>
+                    <form action="removeTea/{{ tea_item.id }}">
+                        <button class="btnNeg customBtn">REMOVE</button>
+                    </form>
                 </div>
 
             {% endfor %}
@@ -34,7 +38,7 @@
     </div>
     <div class="wrapper">
         <div class="btnStrongAct">
-            <form action="./add_tea.html">
+            <form action="{% url 'addTea' %}">
                 <button>ADD TEA TO COLLECTION</button>
             </form>
         </div>

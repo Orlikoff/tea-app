@@ -5,57 +5,47 @@
 {% block linkStyle4 %}active{% endblock %}
 
 {% block content %}
-        <div class="topBar">
+    <div class="topBar">
+        <form action="{% url 'collection' %}">
             <button class="btnBack">BACK</button>
-            <span class="sectionTitle">Add tea</span>
-        </div>
-        <div class="wrapper">
-            <div class="left">
-                <div class="heading">Fill the data, when You have ID</div>
-                <div class="form">
+        </form>
+        <span class="sectionTitle">Add tea</span>
+    </div>
+    <div class="wrapper">
+        <div class="left">
+            <div class="heading">Fill the data, when You have ID</div>
+            <div class="form">
+                <form method="POST">
+                    {% csrf_token %}
                     <div class="formItem">
                         <p class="formTitle">Tea name</p>
                         <label>
-                            <input type="text" class="textEdit" placeholder="Tea name">
+                            <input type="text" name="tea_name" class="textEdit" placeholder="Tea name">
                         </label>
                     </div>
                     <div class="formItem">
                         <p class="formTitle">Country of origin</p>
                         <label>
-                            <input type="text" class="textEdit" placeholder="Country of origin">
+                            <input type="text" name="country" class="textEdit" placeholder="Country of origin">
                         </label>
                     </div>
                     <div class="formItem">
-                        <p class="formTitle">Description</p>
+                        <p class="formTitle">Price</p>
                         <label>
-                            <input type="text" class="textEdit" placeholder="Description">
+                            <input type="text" name="price" class="textEdit" placeholder="Price">
                         </label>
                     </div>
                     <div class="formItem">
                         <p class="formTitle">Package ID</p>
                         <label>
-                            <input type="text" class="textEdit" placeholder="Package ID">
+                            <input type="text" name="package_id" class="textEdit" placeholder="Package ID">
                         </label>
                     </div>
                     <div class="btnStrongActPos">
                         <button>CONFIRM</button>
                     </div>
-                </div>
-            </div>
-            <div class="right">
-                <div class="heading">Choose Your country and send the package</div>
-                <div class="searchBar">
-                    <label id="searchField">
-                        <input type="text" class="search" placeholder="Input country">
-                        <button class="btnActRed" type="submit">SEARCH</button>
-                    </label>
-                </div>
-                <div class="info">
-                    <a href="#">Mrs Smith 813 Howard Street Oswego NY 13126 USA</a>
-                    <a href="#">Mrs Smith 813 Howard Street Oswego NY 13126 USA</a>
-                    <a href="#">Mrs Smith 813 Howard Street Oswego NY 13126 USA</a>
-                    <a href="#">Mrs Smith 813 Howard Street Oswego NY 13126 USA</a>
-                </div>
+                </form>
             </div>
         </div>
+    </div>
 {% endblock %}

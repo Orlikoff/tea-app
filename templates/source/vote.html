@@ -6,7 +6,7 @@
 
 {% block content %}
     <div class="topBar">
-        <form action="javascript:history.go(-1)">
+        <form action="{% url 'collection' %}">
             <button class="btnBack">BACK</button>
         </form>
         <span class="sectionTitle">Vote</span>

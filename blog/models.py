@@ -79,7 +79,7 @@ class TeaItem(models.Model):
     )
     previous_owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True,
                                        blank=True)
-    current_owner = models.ForeignKey(Profile, related_name='tea_collection', on_delete=models.SET_NULL, null=True)
+    current_owner = models.ForeignKey(Profile, related_name='tea_collection', on_delete=models.SET_NULL, null=True, blank=True)
     in_cart_of = models.ForeignKey(Profile, related_name='cart_items', on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=20)
     origin_country = models.CharField(max_length=20)
@@ -89,7 +89,7 @@ class TeaItem(models.Model):
 
 
 class Drop(models.Model):
-    author = models.ForeignKey(Profile, related_name='drops', on_delete=models.CASCADE)
+    author = models.ForeignKey(Profile, related_name='drops', on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=20)
     article = models.TextField()
     creation_date = models.DateTimeField()
@@ -98,6 +98,7 @@ class Drop(models.Model):
 
 class DebitCard(models.Model):
     owner = models.ForeignKey(Profile, related_name='cards', on_delete=models.CASCADE)
-    number = models.CharField(max_length=15)
+    number = models.CharField(max_length=16)
     date = models.CharField(max_length=5)
     cvv = models.PositiveIntegerField()
+    active = models.BooleanField(default=False)
