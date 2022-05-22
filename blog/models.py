@@ -72,11 +72,24 @@ class TeaItem(models.Model):
     MAR = 'MARKETPLACE'
     COL = 'COLLECTION'
     PEN = 'PENDING'
+    PRC = 'PROCESSED'
+
     status_choices = (
         (PEN, 'pending'),
         (COL, 'in collection'),
-        (MAR, 'in marketplace')
+        (MAR, 'in marketplace'),
+        (PRC, 'in process')
     )
+
+    NUL = 'NULL'
+    SOL = 'SELL'
+    BUY = 'BUY'
+    interaction_status_choices = (
+        (NUL, 'null'),
+        (SOL, 'to be sold'),
+        (BUY, 'to be bought')
+    )
+
     previous_owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True,
                                        blank=True)
     current_owner = models.ForeignKey(Profile, related_name='tea_collection', on_delete=models.SET_NULL, null=True, blank=True)
@@ -84,7 +97,8 @@ class TeaItem(models.Model):
     name = models.CharField(max_length=20)
     origin_country = models.CharField(max_length=20)
     price = models.FloatField()
-    status = models.CharField(max_length=20, choices=status_choices, default=MAR)
+    status = models.CharField(max_length=20, choices=status_choices, default=COL)
+    interaction_status = models.CharField(max_length=20, choices=interaction_status_choices, default=NUL)
     voted = models.BooleanField()
 
 

@@ -25,4 +25,6 @@ urlpatterns = [
     path('addCard', views.AddCardView.as_view(), name='addCard'),
     path('chooseCard/<int:card_id>', views.ChooseCardView.as_view(), name='chooseCard'),
     path('removeCard/<int:card_id>', views.RemoveCardView.as_view(), name='removeCard'),
+    path('buyTea/<int:tea_id>', views.BuyTeaView.as_view(), name='buyTea'),
+    path('sellTea/<int:tea_id>', views.SellTeaView.as_view(), name='sellTea'),
 ]

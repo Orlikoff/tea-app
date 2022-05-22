@@ -16,11 +16,49 @@ class IndexPageView(View):
 
 
 class MarketPageView(View):
+    BUY = 'buying'
+    SEL = 'selling'
     template_name = 'source/market.html'
 
     def get(self, request):
-        context = {}
+        # mode = request.session['market_mode']
+        mode = MarketPageView.SEL
+        request.session['previous_page'] = request.path
+        context = {
+            'mode': mode,
+            'tea_items': MarketPageView.get_marketplace_tea() if mode == MarketPageView.BUY else
+            MarketPageView.get_tea_for_sell(
+                request)
+        }
         return render(request, self.template_name, context)
+
+    @staticmethod
+    def get_marketplace_tea():
+        return TeaItem.objects.filter(status=TeaItem.MAR)
+
+    @staticmethod
+    def get_tea_for_sell(request):
+        return request.user.tea_collection.filter(status=TeaItem.COL)
+
+
+class BuyTeaView(View):
+    def get(self, request, tea_id):
+        tea_item = TeaItem.objects.get(id=tea_id)
+        tea_item.status = TeaItem.PRC
+        tea_item.interaction_status = TeaItem.BUY
+        tea_item.in_cart_of = request.user
+        tea_item.save(update_fields=['status', 'interaction_status', 'in_cart_of'])
+        return redirect(self.request.session['previous_page'])
+
+
+class SellTeaView(View):
+    def get(self, request, tea_id):
+        tea_item = TeaItem.objects.get(id=tea_id)
+        tea_item.status = TeaItem.PRC
+        tea_item.interaction_status = TeaItem.SOL
+        tea_item.in_cart_of = request.user
+        tea_item.save(update_fields=['status', 'interaction_status', 'in_cart_of'])
+        return redirect(self.request.session['previous_page'])
 
 
 class DropsPageView(View):
@@ -85,6 +123,7 @@ class LoginPageView(View):
             if user is not None:
                 logout(request)
                 login(request, user)
+                request.session['market_mode'] = MarketPageView.BUY
                 return redirect('/info')
 
         return render(request, self.template_name, {})
@@ -178,6 +217,8 @@ class TeaRemoverView(View):
     def get(self, request, tea_id):
         tea_item = TeaItem.objects.get(id=tea_id)
         tea_item.current_owner = None
+        tea_item.previous_owner = request.user
+        tea_item.status = TeaItem.MAR
         tea_item.save(update_fields=['current_owner'])
         return render(request, CollectionView.template_name, {
             'tea_items': CollectionView.get_collection_items(request)
