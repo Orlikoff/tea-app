@@ -32,4 +32,8 @@ urlpatterns = [
     path('removeFromCart/<int:cart_item_id>', views.RemoveFromCartView.as_view(), name='removeFromCart'),
     path('clearCart', views.CartCleanerView.as_view(), name='cleanCart'),
     path('confirmPayment', views.PaymentConfirmationView.as_view(), name='confirmPayment'),
+    path('addDrop', views.AddDropView.as_view(), name='addDrop'),
+    path('changeDropsMode/<str:mode>', views.ChangeDropsModeView.as_view(), name='changeDropsMode'),
+    path('dropInfo/<int:drop_id>', views.DropInfoView.as_view(), name='dropInfo'),
+    path('dropInfo/voteDrop/<str:mode>/<int:drop_id>', views.DropVoteView.as_view(), name='voteDrop'),
 ]

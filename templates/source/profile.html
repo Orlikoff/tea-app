@@ -6,7 +6,15 @@
 
 {% block content %}
     <div class="currentRating">Hi, {{ user.name }}! Your profile rating is: <strong
-            class="markExcellent">{{ user.rating }}</strong></div>
+            class="{% if 0 <= user.rating and user.rating < 2 %}
+                            markLow
+                            {% elif user.rating < 5 %}
+                            markMedium
+                            {% elif user.rating < 8 %}
+                            markGood
+                            {% else %}
+                            markExcellent
+                            {% endif %}">{{ user.rating }}</strong></div>
 
     <div class="heading">Currently sold by You:</div>
     <div class="gridWrapper">

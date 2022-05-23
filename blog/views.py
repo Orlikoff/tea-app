@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
-from .models import TeaItem, Profile, DebitCard
+from .models import TeaItem, Profile, DebitCard, Drop
 
 ADMIN_ACCOUNT = 'studyorlik@gmail.com'
 
@@ -150,8 +150,78 @@ class DropsPageView(View):
     template_name = 'source/drops.html'
 
     def get(self, request):
-        context = {}
+        mode = request.session['drops_mode']
+        context = {
+            'drop_items': DropsPageView.get_drops(mode),
+        }
         return render(request, self.template_name, context)
+
+    @staticmethod
+    def get_drops(mode):
+        if mode == 'date':
+            return Drop.objects.all().order_by('-creation_date')
+        return Drop.objects.all().order_by('-popularity')
+
+
+class AddDropView(View):
+    template_name = 'source/add_drop.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {})
+
+    def post(self, request):
+        drop_name = request.POST.get('title')
+        drop_desc = request.POST.get('description')
+        drop_short_desc = drop_desc[:199].strip()
+
+        if not drop_name or not drop_desc:
+            return render(request, self.template_name, {})
+
+        Drop.objects.create(
+            author=request.user,
+            title=drop_name,
+            article=drop_desc,
+            short_article=drop_short_desc,
+        )
+
+        return redirect('drops')
+
+
+class ChangeDropsModeView(View):
+    def get(self, request, mode):
+        request.session['drops_mode'] = mode
+        return redirect('drops')
+
+
+class DropInfoView(View):
+    template_name = 'source/drop_info.html'
+
+    def get(self, request, drop_id):
+        request.session['prev_drop'] = request.path
+        context = {
+            'drop_item': Drop.objects.get(id=drop_id),
+            'can_vote': Drop.objects.get(id=drop_id).author != request.user and not (
+                        request.user in Drop.objects.get(id=drop_id).voted_people.all()),
+        }
+        return render(request, self.template_name, context)
+
+
+class DropVoteView(View):
+    coef = 0.05
+
+    def get(self, request, mode, drop_id):
+        drop = Drop.objects.get(id=drop_id)
+        profile = drop.author
+        if mode == 'pos':
+            drop.popularity += 1
+            profile.rating += self.coef
+        else:
+            drop.popularity -= 1
+            profile.rating -= self.coef
+        drop.voted_people.add(request.user)
+        drop.save(update_fields=['popularity'])
+        profile.save(update_fields=['rating'])
+        return redirect(request.session['prev_drop'])
 
 
 class ProfilePageView(View):
@@ -186,6 +256,8 @@ class RegisterPageView(View):
                     email=form.cleaned_data['email'],
                     password=form.cleaned_data['password1']
                 )
+                request.session['drops_mode'] = 'date'
+                request.session['market_mode'] = MarketPageView.BUY
                 login(request, new_user)
                 return redirect('info')
             else:
@@ -208,6 +280,7 @@ class LoginPageView(View):
             if user is not None:
                 logout(request)
                 login(request, user)
+                request.session['drops_mode'] = 'date'
                 request.session['market_mode'] = MarketPageView.BUY
                 return redirect('/info')
 
@@ -302,12 +375,10 @@ class TeaRemoverView(View):
     def get(self, request, tea_id):
         tea_item = TeaItem.objects.get(id=tea_id)
         tea_item.current_owner = None
-        tea_item.previous_owner = request.user
+        tea_item.previous_owner = None
         tea_item.status = TeaItem.MAR
-        tea_item.save(update_fields=['current_owner'])
-        return render(request, CollectionView.template_name, {
-            'tea_items': CollectionView.get_collection_items(request)
-        })
+        tea_item.save(update_fields=['current_owner', 'status', 'previous_owner'])
+        return redirect('collection')
 
 
 class AddTeaView(View):

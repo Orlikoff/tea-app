@@ -103,11 +103,13 @@ class TeaItem(models.Model):
 
 
 class Drop(models.Model):
-    author = models.ForeignKey(Profile, related_name='drops', on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(Profile, related_name='drops', on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=20)
     article = models.TextField()
-    creation_date = models.DateTimeField()
-    popularity = models.IntegerField()
+    short_article = models.CharField(max_length=200, default='')
+    creation_date = models.DateTimeField(auto_now_add=True)
+    popularity = models.IntegerField(default=0)
+    voted_people = models.ManyToManyField(Profile, related_name='voted_people', blank=True)
 
 
 class DebitCard(models.Model):

@@ -5,110 +5,49 @@
 {% block linkStyle3 %}active{% endblock %}
 
 {% block content %}
-        <p class="heading">Latest drops...</p>
+    <p class="heading">Latest drops...</p>
 
-        <div class="gridWrapper">
-            <div class="items">
+    <div class="gridWrapper">
+        <div class="items">
+            {% for drop_item in drop_items %}
                 <div class="dropItem">
-                    <p class="dropTitle">Big pack of Indian tea arrived!</p>
-                    <p class="dropInfo">New pack of fresh Indian tea has
-                        arrived to our stock!
-                        Average price is between 10-20$.
-                        The most interesting instance from
-                        the pack is Big Elephant, which is
-                        known for its unique taste and...</p>
-                    <p class="date">May 16, 2022</p>
+                    <p class="dropTitle">{{ drop_item.title }}</p>
+                    <p class="dropInfo">{{ drop_item.short_article }}...</p>
+                    <p class="date">{{ drop_item.creation_date }}</p>
                     <div class="bottom">
-                        <p class="votes">+120</p>
-                        <button class="btnActRed">MORE</button>
+                        <p class="votes">
+                            {% if drop_item.popularity >= 0 %}
+                            +
+                            {% else %}
+                            -
+                            {% endif %}
+                            {{ drop_item.popularity }}</p>
+                        <form action="dropInfo/{{ drop_item.id }}">
+                            <button class="btnActRed">MORE</button>
+                        </form>
                     </div>
                 </div>
-                <div class="dropItem">
-                    <p class="dropTitle">Big pack of Indian tea arrived!</p>
-                    <p class="dropInfo">New pack of fresh Indian tea has
-                        arrived to our stock!
-                        Average price is between 10-20$.
-                        The most interesting instance from
-                        the pack is Big Elephant, which is
-                        known for its unique taste and...</p>
-                    <p class="date">May 16, 2022</p>
-                    <div class="bottom">
-                        <p class="votes">+120</p>
-                        <button class="btnActRed">MORE</button>
-                    </div>
-                </div>
-                <div class="dropItem">
-                    <p class="dropTitle">Big pack of Indian tea arrived!</p>
-                    <p class="dropInfo">New pack of fresh Indian tea has
-                        arrived to our stock!
-                        Average price is between 10-20$.
-                        The most interesting instance from
-                        the pack is Big Elephant, which is
-                        known for its unique taste and...</p>
-                    <p class="date">May 16, 2022</p>
-                    <div class="bottom">
-                        <p class="votes">+120</p>
-                        <button class="btnActRed">MORE</button>
-                    </div>
-                </div>
-                <div class="dropItem">
-                    <p class="dropTitle">Big pack of Indian tea arrived!</p>
-                    <p class="dropInfo">New pack of fresh Indian tea has
-                        arrived to our stock!
-                        Average price is between 10-20$.
-                        The most interesting instance from
-                        the pack is Big Elephant, which is
-                        known for its unique taste and...</p>
-                    <p class="date">May 16, 2022</p>
-                    <div class="bottom">
-                        <p class="votes">+120</p>
-                        <button class="btnActRed">MORE</button>
-                    </div>
-                </div>
-                <div class="dropItem">
-                    <p class="dropTitle">Big pack of Indian tea arrived!</p>
-                    <p class="dropInfo">New pack of fresh Indian tea has
-                        arrived to our stock!
-                        Average price is between 10-20$.
-                        The most interesting instance from
-                        the pack is Big Elephant, which is
-                        known for its unique taste and...</p>
-                    <p class="date">May 16, 2022</p>
-                    <div class="bottom">
-                        <p class="votes">+120</p>
-                        <button class="btnActRed">MORE</button>
-                    </div>
-                </div>
-                <div class="dropItem">
-                    <p class="dropTitle">Big pack of Indian tea arrived!</p>
-                    <p class="dropInfo">New pack of fresh Indian tea has
-                        arrived to our stock!
-                        Average price is between 10-20$.
-                        The most interesting instance from
-                        the pack is Big Elephant, which is
-                        known for its unique taste and...</p>
-                    <p class="date">May 16, 2022</p>
-                    <div class="bottom">
-                        <p class="votes">+120</p>
-                        <button class="btnActRed">MORE</button>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
+    </div>
 
-        <div class="mainBottom">
-            <form action="./add_drop.html">
-                <div class="btnStrongAct nullMargin">
-                    <button>ADD DROP</button>
-                </div>
-            </form>
-            <div class="sort">
+    <div class="mainBottom">
+        <form action="{% url 'addDrop' %}">
+            <div class="btnStrongAct nullMargin">
+                <button>ADD DROP</button>
+            </div>
+        </form>
+        <div class="sort">
+            <form action="changeDropsMode/date">
                 <div class="btnStrongAct">
                     <button>RECENT FIRST</button>
                 </div>
+            </form>
+            <form action="changeDropsMode/popularity">
                 <div class="btnStrongAct">
                     <button>POPULAR FIRST</button>
                 </div>
-            </div>
+            </form>
         </div>
+    </div>
 {% endblock %}
