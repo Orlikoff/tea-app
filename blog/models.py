@@ -90,7 +90,7 @@ class TeaItem(models.Model):
         (BUY, 'to be bought')
     )
 
-    previous_owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True,
+    previous_owner = models.ForeignKey(Profile, related_name='on_sell', on_delete=models.SET_NULL, null=True,
                                        blank=True)
     current_owner = models.ForeignKey(Profile, related_name='tea_collection', on_delete=models.SET_NULL, null=True, blank=True)
     in_cart_of = models.ForeignKey(Profile, related_name='cart_items', on_delete=models.SET_NULL, null=True, blank=True)

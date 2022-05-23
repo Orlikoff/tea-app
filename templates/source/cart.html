@@ -5,178 +5,47 @@
 {% block linkStyle2 %}active{% endblock %}
 
 {% block content %}
-            <div class="topBar">
-                <button class="btnBack">BACK</button>
-                <span class="sectionTitle">Cart</span>
-            </div>
+    <div class="topBar">
+        <form action="{{ url_to_comeback }}">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">Cart</span>
+    </div>
 
-            <div class="gridWrapper">
-                <div class="items">
-                    <div class="listItem added">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
+    <div class="gridWrapper">
+        <div class="items">
+            {% for cart_item in cart_items %}
+                <div class="listItem
+                        {% if cart_item.interaction_status == 'BUY' %}
+                        added
+                        {% else %}
+                        removed
+                        {% endif %}">
+                    <div class="textSection">
+                        <p class="title">{{ cart_item.name }}, {{ cart_item.origin_country }}</p>
+                        <p class="price">{{ cart_item.price }}$</p>
                     </div>
-
-                    <div class="listItem removed">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
+                    <form action="removeFromCart/{{ cart_item.id }}">
                         <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <div class="stats"><span class="mark markExcellent">9.3</span>/<span
-                                    class="orders">132</span></div>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
-                    <div class="listItem">
-                        <div class="textSection">
-                            <p class="title">Babylon, Indian tea</p>
-                            <p class="price">15.99$</p>
-                        </div>
-                        <button class="btnNeg">REMOVE</button>
-                    </div>
-
+                    </form>
                 </div>
-            </div>
+            {% endfor %}
+        </div>
+    </div>
 
-            <div class="bottom">
-                <p><strong>Total: 129.99$</strong></p>
-                <div class="actions">
-                    <div class="btnStrongActNeg">
-                        <button>CLEAR ALL</button>
-                    </div>
-                    <div class="btnStrongActPos">
-                        <button>CONFIRM PAYMENT</button>
-                    </div>
+    <div class="bottom">
+        <p><strong>{{ cart_sum }}$</strong></p>
+        <div class="actions">
+            <form action="{% url 'cleanCart' %}">
+                <div class="btnStrongActNeg">
+                    <button>CLEAR ALL</button>
                 </div>
-            </div>
+            </form>
+            <form action="{% url 'confirmPayment' %}">
+                <div class="btnStrongActPos">
+                    <button>CONFIRM PAYMENT</button>
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock %}

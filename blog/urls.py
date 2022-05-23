@@ -27,4 +27,9 @@ urlpatterns = [
     path('removeCard/<int:card_id>', views.RemoveCardView.as_view(), name='removeCard'),
     path('buyTea/<int:tea_id>', views.BuyTeaView.as_view(), name='buyTea'),
     path('sellTea/<int:tea_id>', views.SellTeaView.as_view(), name='sellTea'),
+    path('changeMarketMode/<str:mode>', views.ChangeMarketModeView.as_view(), name='changeMarketMode'),
+    path('cart', views.CartView.as_view(), name='cart'),
+    path('removeFromCart/<int:cart_item_id>', views.RemoveFromCartView.as_view(), name='removeFromCart'),
+    path('clearCart', views.CartCleanerView.as_view(), name='cleanCart'),
+    path('confirmPayment', views.PaymentConfirmationView.as_view(), name='confirmPayment'),
 ]

@@ -6,7 +6,10 @@
       <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/collection.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/collection.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/source/market.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/market.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/source/vote.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/source/vote.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +115,8 @@
       <workItem from="1653111155996" duration="219000" />
       <workItem from="1653139582922" duration="4993000" />
       <workItem from="1653163460672" duration="333000" />
-      <workItem from="1653223666859" duration="10070000" />
+      <workItem from="1653223666859" duration="10336000" />
+      <workItem from="1653333753693" duration="4241000" />
     </task>
     <servers />
   </component>

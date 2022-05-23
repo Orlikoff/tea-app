@@ -78,20 +78,26 @@
         <p>You are <u><strong>
             {% if mode == 'buying' %}BUYING{% else %}SELLING{% endif %}</strong></u> now</p>
         <div class="actions">
-            <div class="btnStrongAct">
-                <button>BUY</button>
-            </div>
-            <div class="btnStrongAct">
-                <button>SELL</button>
-            </div>
+            <form action="changeMarketMode/buying">
+                <div class="btnStrongAct">
+                    <button>BUY</button>
+                </div>
+            </form>
+            <form action="changeMarketMode/selling">
+                <div class="btnStrongAct">
+                    <button>SELL</button>
+                </div>
+            </form>
         </div>
         <div class="cart">
             <div class="btnNeut">
-                <form action="./cart.html">
+                <form action="{% url 'cart' %}">
                     <button>PROCEED TO CART</button>
                 </form>
             </div>
-            <p class="counter">3</p>
+            <p class="counter">
+                {{ cart_amount }}
+            </p>
         </div>
     </div>
 {% endblock %}

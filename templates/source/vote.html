@@ -19,7 +19,7 @@
         <form action="voteFor/{{ tea_item.id }}" method="POST">
             {% csrf_token %}
             <div class="formItem">
-                <p class="formTitle">{{ tea_item.id }}</p>
+                <p class="formTitle">Mark</p>
                 <label>
                     <input type="text" name="mark" class="textEdit" placeholder="Mark"/>
                 </label>

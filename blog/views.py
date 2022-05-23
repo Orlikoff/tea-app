@@ -21,20 +21,19 @@ class MarketPageView(View):
     template_name = 'source/market.html'
 
     def get(self, request):
-        # mode = request.session['market_mode']
-        mode = MarketPageView.SEL
+        mode = request.session['market_mode']
         request.session['previous_page'] = request.path
         context = {
             'mode': mode,
-            'tea_items': MarketPageView.get_marketplace_tea() if mode == MarketPageView.BUY else
-            MarketPageView.get_tea_for_sell(
-                request)
+            'tea_items': MarketPageView.get_marketplace_tea(request) if mode == MarketPageView.BUY else
+            MarketPageView.get_tea_for_sell(request),
+            'cart_amount': request.user.cart_items.count(),
         }
         return render(request, self.template_name, context)
 
     @staticmethod
-    def get_marketplace_tea():
-        return TeaItem.objects.filter(status=TeaItem.MAR)
+    def get_marketplace_tea(request):
+        return TeaItem.objects.filter(status=TeaItem.MAR).exclude(previous_owner=request.user)
 
     @staticmethod
     def get_tea_for_sell(request):
@@ -44,6 +43,8 @@ class MarketPageView(View):
 class BuyTeaView(View):
     def get(self, request, tea_id):
         tea_item = TeaItem.objects.get(id=tea_id)
+        if tea_item.previous_owner == request.user:
+            return redirect(self.request.session['previous_page'])
         tea_item.status = TeaItem.PRC
         tea_item.interaction_status = TeaItem.BUY
         tea_item.in_cart_of = request.user
@@ -59,6 +60,90 @@ class SellTeaView(View):
         tea_item.in_cart_of = request.user
         tea_item.save(update_fields=['status', 'interaction_status', 'in_cart_of'])
         return redirect(self.request.session['previous_page'])
+
+
+class ChangeMarketModeView(View):
+    def get(self, request, mode):
+        request.session['market_mode'] = mode
+        return redirect('market')
+
+
+class CartView(View):
+    template_name = 'source/cart.html'
+
+    def get(self, request):
+        context = {
+            'cart_items': CartView.get_cart_items(request),
+            'url_to_comeback': request.session['previous_page'],
+            'cart_sum': sum([cart_item.price for cart_item in CartView.get_cart_items(request).filter(
+                interaction_status=TeaItem.BUY
+            )])
+        }
+        return render(request, self.template_name, context)
+
+    @staticmethod
+    def get_cart_items(request):
+        return request.user.cart_items.all()
+
+
+class RemoveFromCartView(View):
+    def get(self, request, cart_item_id):
+        tea_item = TeaItem.objects.get(id=cart_item_id)
+        RemoveFromCartView.remove_from_cart(tea_item)
+        return redirect('cart')
+
+    @staticmethod
+    def remove_from_cart(tea_item):
+        if tea_item.interaction_status == TeaItem.SOL:
+            tea_item.status = TeaItem.COL
+        else:
+            tea_item.status = TeaItem.MAR
+        tea_item.interaction_status = TeaItem.NUL
+        tea_item.in_cart_of = None
+        tea_item.save(update_fields=['status', 'interaction_status', 'in_cart_of'])
+
+
+class CartCleanerView(View):
+    def get(self, request):
+        tea_items = request.user.cart_items.all()
+        for tea_item in tea_items:
+            RemoveFromCartView.remove_from_cart(tea_item)
+        return redirect('cart')
+
+
+class PaymentConfirmationView(View):
+    def get(self, request):
+        if PaymentConfirmationView.check_for_card(request):
+            cart_items = request.user.cart_items.all()
+            for cart_item in cart_items:
+                PaymentConfirmationView.apply_cart_changes(request, cart_item)
+        else:
+            redirect('cards')
+        return redirect('cart')
+
+    @staticmethod
+    def apply_cart_changes(request, tea_item: TeaItem):
+        if tea_item.interaction_status == TeaItem.SOL:
+            tea_item.status = TeaItem.MAR
+            tea_item.previous_owner = request.user
+            tea_item.current_owner = None
+            tea_item.in_cart_of = None
+        else:
+            tea_item.status = TeaItem.COL
+            tea_item.current_owner = request.user
+        tea_item.voted = False
+        tea_item.in_cart_of = None
+        tea_item.interaction_status = TeaItem.NUL
+        tea_item.save(update_fields=['current_owner', 'previous_owner',
+                                     'status', 'interaction_status', 'in_cart_of',
+                                     'voted'])
+
+    @staticmethod
+    def check_for_card(request):
+        cards_len = request.user.cards.all().count()
+        if cards_len > 0:
+            return True
+        return False
 
 
 class DropsPageView(View):
@@ -80,7 +165,7 @@ class ProfilePageView(View):
 
     @staticmethod
     def get_sold_items(request):
-        return request.user.tea_collection.filter(status=TeaItem.MAR)
+        return request.user.on_sell.filter(status=TeaItem.MAR)
 
 
 class RegisterPageView(View):
@@ -156,10 +241,10 @@ class ItemRemover(View):
     def get(self, request, tea_id):
         item = TeaItem.objects.get(id=tea_id)
         item.status = TeaItem.COL
-        item.save(update_fields=['status'])
-        return render(request, ProfilePageView.template_name, context={
-            'tea_sold': ProfilePageView.get_sold_items(request)
-        })
+        item.current_owner = item.previous_owner
+        item.previous_owner = None
+        item.save(update_fields=['status', 'current_owner', 'previous_owner'])
+        return redirect('profile')
 
 
 class ProfileRemoverView(View):
