@@ -18,8 +18,6 @@
                         <p class="votes">
                             {% if drop_item.popularity >= 0 %}
                             +
-                            {% else %}
-                            -
                             {% endif %}
                             {{ drop_item.popularity }}</p>
                         <form action="dropInfo/{{ drop_item.id }}">

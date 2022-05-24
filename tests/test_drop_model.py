@@ -14,7 +14,7 @@ def create_temp_drop(request):
 
 
 @pytest.mark.parametrize('test, expected', [('TestDrop1', 'TestDrop1'), ('Test Drop2', 'Test Drop2')])
-def test_profile_creation(db, test, expected):
+def test_drop_creation(db, test, expected):
     new_drop = Drop.objects.create(
         author=None,
         title=test,
@@ -30,7 +30,7 @@ def test_profile_creation(db, test, expected):
     assert new_drop.voted_people.count() == 0
 
 
-def test_tea_item_insertion(db, create_temp_drop):
+def test_drop_insertion(db, create_temp_drop):
     drop = create_temp_drop
     db_drop = Drop.objects.get(id=drop.id)
     assert drop.author == db_drop.author
@@ -42,6 +42,6 @@ def test_tea_item_insertion(db, create_temp_drop):
     assert drop.voted_people.count() == db_drop.voted_people.count()
 
 
-def test_tea_item_deletion(db, create_temp_drop):
+def test_drop_deletion(db, create_temp_drop):
     drop = create_temp_drop
     assert Drop.objects.get(id=drop.id).delete()[0] == 1

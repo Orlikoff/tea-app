@@ -4,8 +4,6 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
 from .models import TeaItem, Profile, DebitCard, Drop
 
-ADMIN_ACCOUNT = 'studyorlik@gmail.com'
-
 
 class IndexPageView(View):
     template_name = 'source/index.html'
@@ -21,7 +19,7 @@ class MarketPageView(View):
     template_name = 'source/market.html'
 
     def get(self, request):
-        mode = request.session['market_mode']
+        mode = request.session.get('market_mode', MarketPageView.BUY)
         request.session['previous_page'] = request.path
         context = {
             'mode': mode,
@@ -44,12 +42,12 @@ class BuyTeaView(View):
     def get(self, request, tea_id):
         tea_item = TeaItem.objects.get(id=tea_id)
         if tea_item.previous_owner == request.user:
-            return redirect(self.request.session['previous_page'])
+            return redirect(self.request.session.get('previous_page', 'info'))
         tea_item.status = TeaItem.PRC
         tea_item.interaction_status = TeaItem.BUY
         tea_item.in_cart_of = request.user
         tea_item.save(update_fields=['status', 'interaction_status', 'in_cart_of'])
-        return redirect(self.request.session['previous_page'])
+        return redirect(self.request.session.get('previous_page', 'info'))
 
 
 class SellTeaView(View):
@@ -59,7 +57,7 @@ class SellTeaView(View):
         tea_item.interaction_status = TeaItem.SOL
         tea_item.in_cart_of = request.user
         tea_item.save(update_fields=['status', 'interaction_status', 'in_cart_of'])
-        return redirect(self.request.session['previous_page'])
+        return redirect(self.request.session.get('previous_page', 'info'))
 
 
 class ChangeMarketModeView(View):
@@ -74,7 +72,7 @@ class CartView(View):
     def get(self, request):
         context = {
             'cart_items': CartView.get_cart_items(request),
-            'url_to_comeback': request.session['previous_page'],
+            'url_to_comeback': request.session.get('previous_page', 'info'),
             'cart_sum': sum([cart_item.price for cart_item in CartView.get_cart_items(request).filter(
                 interaction_status=TeaItem.BUY
             )])
@@ -150,7 +148,7 @@ class DropsPageView(View):
     template_name = 'source/drops.html'
 
     def get(self, request):
-        mode = request.session['drops_mode']
+        mode = request.session.get('drops_mode', 'date')
         context = {
             'drop_items': DropsPageView.get_drops(mode),
         }
@@ -221,7 +219,7 @@ class DropVoteView(View):
         drop.voted_people.add(request.user)
         drop.save(update_fields=['popularity'])
         profile.save(update_fields=['rating'])
-        return redirect(request.session['prev_drop'])
+        return redirect(request.session.get('prev_drop', 'drops'))
 
 
 class ProfilePageView(View):

@@ -17,7 +17,7 @@ def create_temp_tea_item(request):
 
 
 @pytest.mark.parametrize('test, expected', [('TestTeaItem1', 'TestTeaItem1'), ('Test TeaItem2', 'Test TeaItem2')])
-def test_profile_creation(db, test, expected):
+def test_tea_item_creation(db, test, expected):
     new_tea_item = TeaItem.objects.create(
         previous_owner=None,
         current_owner=None,
