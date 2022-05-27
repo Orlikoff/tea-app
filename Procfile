@@ -1,1 +1,0 @@
-web: gunicorn teafy.wsgi --log-file -
