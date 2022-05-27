@@ -4,6 +4,9 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
 from .models import TeaItem, Profile, DebitCard, Drop
 import logging
+import threading
+from django.core.mail import send_mail
+import teafy.settings as settings
 
 
 logger = logging.getLogger(__name__)
@@ -124,16 +127,36 @@ class CartCleanerView(View):
         return redirect('cart')
 
 
+class AsyncEmailThread(threading.Thread):
+    def __init__(self, request, pos):
+        self.request = request
+        self.pos = pos
+        super().__init__()
+
+    def run(self):
+        subject = f'Payment confirmation for {self.request.user.email}'
+        if self.pos:
+            message = f'Dear {self.request.user.name}, Your payment has been processed successfully!'
+        else:
+            message = f"Dear {self.request.user.name}, Your payment has been declined!"
+        to_email = self.request.user.email
+        return send_mail(subject, message, settings.EMAIL_HOST_USER, [to_email], fail_silently=True)
+
+
 class PaymentConfirmationView(View):
     def get(self, request):
-        if PaymentConfirmationView.check_for_card(request):
+        res = PaymentConfirmationView.check_for_card(request)
+        if res:
             cart_items = request.user.cart_items.all()
             for cart_item in cart_items:
                 PaymentConfirmationView.apply_cart_changes(request, cart_item)
-            logger.debug('Payment confirmed')
+
+            if cart_items.count() != 0:
+                AsyncEmailThread(request, True).start()
         else:
-            redirect('cards')
-            logger.debug('Payment declined')
+            AsyncEmailThread(request, False).start()
+            return redirect('cards')
+
         return redirect('cart')
 
     @staticmethod
@@ -190,7 +213,7 @@ class AddDropView(View):
         drop_desc = request.POST.get('description')
         drop_short_desc = drop_desc[:199].strip()
 
-        if not drop_name or not drop_desc:
+        if drop_name == '' or drop_desc == '' or len(drop_name) > 19:
             return render(request, self.template_name, {})
 
         Drop.objects.create(
@@ -425,10 +448,9 @@ class AddTeaView(View):
         tea_name = request.POST.get('tea_name')
         country_of_origin = request.POST.get('country')
         price = float(request.POST.get('price'))
-
         package_id = request.POST.get('package_id')
 
-        if not tea_name or not country_of_origin or not self.validate_package(package_id) or price < 0:
+        if tea_name == '' or country_of_origin == '' or not price or not self.validate_package(package_id) or price < 0:
             logger.debug('Bad tea add form')
             return render(request, self.template_name, {})
 
@@ -450,6 +472,8 @@ class AddTeaView(View):
         })
 
     def validate_package(self, package_id):
+        if package_id == '':
+            return False
         return True
 
 
@@ -478,9 +502,14 @@ class AddCardView(View):
     def post(self, request):
         card_number = request.POST.get('card_number')
         card_date = request.POST.get('card_date')
-        card_cvv = int(request.POST.get('card_cvv'))
+        try:
+            card_cvv = int(request.POST.get('card_cvv'))
+        except:
+            return redirect('cards')
 
-        if not card_number or not card_date or not card_cvv or card_cvv < 0 or len(request.user.cards.all()) >= 3 or \
+        if len(card_number) != 16 or card_number == '' or card_date == '' or \
+                len(card_date) != 5 or len(str(card_cvv)) != 3 or card_cvv < 0 \
+                or len(request.user.cards.all()) >= 3 or \
                 self.check_for_double(request, card_number):
             logger.debug('Bad card form')
             return redirect('cards')
