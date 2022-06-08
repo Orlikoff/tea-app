@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d061eeef-a929-4a01-86e7-7ffc436c6444" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.coveragerc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teafy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/teafy/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_debit_card_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_drop_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_profile_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_tea_item_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_views.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +151,9 @@
       <workItem from="1653512630001" duration="69000" />
       <workItem from="1653640374065" duration="8155000" />
       <workItem from="1653666319482" duration="243000" />
+      <workItem from="1654113646880" duration="249000" />
+      <workItem from="1654609641329" duration="353000" />
+      <workItem from="1654701988967" duration="1179000" />
     </task>
     <servers />
   </component>
