@@ -86,13 +86,21 @@ WSGI_APPLICATION = 'teafy.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': env('NAME'),
+    #     'USER': env('USER'),
+    #     'PASSWORD': env('PASSWORD'),
+    #     'HOST': env('HOST'),
+    #     'PORT': env('PORT'),
+    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('NAME'),
-        'USER': env('USER'),
-        'PASSWORD': env('PASSWORD'),
-        'HOST': env('HOST'),
-        'PORT': env('PORT'),
+        'NAME': 'd4pc34d4uvhp4b',
+        'USER': 'ijanfvgxcayuks',
+        'PASSWORD': '9198bfd9454b15b8802b6dbe48c61b83782fbaf0a1aa8e00e46586dfcfe6797f',
+        'HOST': 'ec2-3-248-121-12.eu-west-1.compute.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
