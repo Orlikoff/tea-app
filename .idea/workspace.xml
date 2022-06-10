@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d061eeef-a929-4a01-86e7-7ffc436c6444" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a3055b7-4d9a-49be-a396-de3e1306fe28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a3055b7-4d9a-49be-a396-de3e1306fe28/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a3055b7-4d9a-49be-a396-de3e1306fe28/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a3055b7-4d9a-49be-a396-de3e1306fe28/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a3055b7-4d9a-49be-a396-de3e1306fe28/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7e6df4e-f4a6-48b9-bc56-04bd080e131d.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7e6df4e-f4a6-48b9-bc56-04bd080e131d/storage_v2/_src_/database/degs78c4d2lpgn.-CC60g.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7e6df4e-f4a6-48b9-bc56-04bd080e131d/storage_v2/_src_/database/degs78c4d2lpgn.-CC60g/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7e6df4e-f4a6-48b9-bc56-04bd080e131d/storage_v2/_src_/database/degs78c4d2lpgn.-CC60g/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7e6df4e-f4a6-48b9-bc56-04bd080e131d/storage_v2/_src_/database/degs78c4d2lpgn.-CC60g/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teafy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/teafy/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +155,9 @@
       <workItem from="1653666319482" duration="243000" />
       <workItem from="1654113646880" duration="249000" />
       <workItem from="1654609641329" duration="353000" />
-      <workItem from="1654701988967" duration="3569000" />
+      <workItem from="1654701988967" duration="4427000" />
+      <workItem from="1654786222196" duration="806000" />
+      <workItem from="1654791937328" duration="495000" />
     </task>
     <servers />
   </component>
