@@ -1,0 +1,89 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Teafy{% endblock %}
+{% block styles %}{% static 'index.css' %}{% endblock %}
+{% block linkStyle1 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBlock">
+        <div class="leftPart">
+            <p>
+                <strong>Teafy</strong> is a marketplace as well as community for
+                tealovers all around the <strong>GLOBE</strong>
+            </p>
+            <form action="{% url 'drops' %}">
+                <button class="btnActRed">MORE</button>
+            </form>
+        </div>
+        <div class="rightPart">
+            <div class="sectTitle">
+                <p class="bigTitle">Recent market updates</p>
+            </div>
+            <div class="items">
+                <form action="{% url 'market' %}">
+                    <div class="listItem">
+                        <div class="textSection">
+                            <p class="title">Babylon, Indian tea</p>
+                            <p class="price">15.99$</p>
+                        </div>
+                        <button class="btnPos">ADD</button>
+                    </div>
+                    <div class="listItem">
+                        <div class="textSection">
+                            <p class="title">Black, China tea</p>
+                            <p class="price">13.99$</p>
+                        </div>
+                        <button class="btnPos">ADD</button>
+                    </div>
+                    <div class="listItem">
+                        <div class="textSection">
+                            <p class="title">Green, Indian tea</p>
+                            <p class="price">11.99$</p>
+                        </div>
+                        <button class="btnPos">ADD</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="bottomBlock">
+        <div class="btnNeut">
+            <form action="{% url 'market' %}">
+                <button>FIND YOUR TEA</button>
+            </form>
+        </div>
+
+        <div class="social">
+            <button class="btnActRed">
+                <a href="https://www.google.com/">
+                    <img src="{% static 'images/google_sign.svg' %}" alt="google"/>
+                </a>
+            </button>
+            <button class="btnActRed">
+                <a href="https://github.com/Orlikoff/">
+                    <img src="{% static 'images/git_sign.svg' %}" alt="git"/>
+                </a>
+            </button>
+            <button class="btnActRed">
+                <a href="https://www.vk.com/">
+                    <img src="{% static 'images/vk_sign.svg' %}" alt="vk"/>
+                </a>
+            </button>
+        </div>
+
+        <div class="authRequest">
+            <p class="title">
+                Become a part of the<br/>
+                <strong>Greatest tea community</strong>
+            </p>
+            <div class="buttons">
+                <form action="{% url 'signup' %}">
+                    <button class="btnActRed">SING UP</button>
+                </form>
+                <form action="{% url 'login' %}">
+                    <button class="btnBack">LOG IN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

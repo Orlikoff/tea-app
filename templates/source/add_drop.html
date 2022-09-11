@@ -1,0 +1,36 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Add drop{% endblock %}
+{% block styles %}{% static 'add_drop.css' %}{% endblock %}
+{% block linkStyle3 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBar">
+        <form action="{% url 'drops' %}">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">Add drop</span>
+    </div>
+
+    <div class="form">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="formItem">
+                <p class="formTitle">Drop title</p>
+                <label>
+                    <input type="text" name="title" class="textEdit" placeholder="Drop title">
+                </label>
+            </div>
+            <div class="formItem">
+                <p class="formTitle">Drop description</p>
+                <label>
+                    <textarea name="description" class="textArea" cols="30" rows="10"
+                              placeholder="Drop description"></textarea>
+                </label>
+            </div>
+            <div class="btnStrongActPos">
+                <button>CONFIRM</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

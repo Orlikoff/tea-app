@@ -1,0 +1,55 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block styles %}{% static 'profile.css' %}{% endblock %}
+{% block linkStyle4 %}active{% endblock %}
+
+{% block content %}
+    <div class="currentRating">Hi, {{ user.name }}! Your profile rating is: <strong
+            class="{% if 0 <= user.rating and user.rating < 2 %}
+                            markLow
+                            {% elif user.rating < 5 %}
+                            markMedium
+                            {% elif user.rating < 8 %}
+                            markGood
+                            {% else %}
+                            markExcellent
+                            {% endif %}">{{ user.rating }}</strong></div>
+
+    <div class="heading">Currently sold by You:</div>
+    <div class="gridWrapper">
+        <div class="items">
+            {% for tea_item in tea_sold %}
+                <div class="listItem">
+                    <div class="textSection">
+                        <p class="title">{{ tea_item.name }}, {{ tea_item.origin_country }}</p>
+                        <p class="price">{{ tea_item.price }}$</p>
+                    </div>
+                    <form action="removeFromSelling/{{ tea_item.id }}">
+                        <button class="btnNeg">REMOVE</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="actions">
+            <form action="{% url 'detailsProfile' %}">
+                <div class="btnStrongAct">
+                    <button>PROFILE DETAILS</button>
+                </div>
+            </form>
+            <form action="{% url 'cards' %}">
+                <div class="btnStrongAct">
+                    <button>CARDS</button>
+                </div>
+            </form>
+            <form action="{% url 'collection' %}">
+                <div class="btnStrongAct">
+                    <button>COLLECTION</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

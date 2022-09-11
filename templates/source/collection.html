@@ -1,0 +1,46 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Your collection{% endblock %}
+{% block styles %}{% static 'collection.css' %}{% endblock %}
+{% block linkStyle4 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBar">
+        <form action="{% url 'profile' %}">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">Tea collection</span>
+    </div>
+
+    <div class="gridWrapper">
+        <div class="items">
+            {% for tea_item in tea_items %}
+
+                <div class="listItem {% if tea_item.status == 'PENDING' %}pending{% endif %}">
+                    <div class="textSection">
+                        <p class="title">{{ tea_item.name }}, {{ tea_item.origin_country }}</p>
+                    </div>
+                    {% if not tea_item.voted and not tea_item.previous_owner is None and tea_item.previous_owner != tea_item.current_owner %}
+                        <form action="vote/{{ tea_item.id }}">
+                            <button class="btnPos customBtn voteBnt">VOTE</button>
+                        </form>
+                    {% endif %}
+                    <form action="shipTea/{{ tea_item.id }}">
+                        <button class="btnPos customBtn">SHIP</button>
+                    </form>
+                    <form action="removeTea/{{ tea_item.id }}">
+                        <button class="btnNeg customBtn">REMOVE</button>
+                    </form>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="btnStrongAct">
+            <form action="{% url 'addTea' %}">
+                <button>ADD TEA TO COLLECTION</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

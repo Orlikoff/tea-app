@@ -1,0 +1,44 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}{{ drop_item.title }}{% endblock %}
+{% block styles %}{% static 'drop_info.css' %}{% endblock %}
+{% block linkStyle3 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBar">
+        <form action="{% url 'drops' %}">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">{{ drop_item.title }}</span>
+    </div>
+
+    <div class="wrapper">
+        <p class="dropData">
+            {{ drop_item.article }}
+        </p>
+        {% if can_vote %}
+            <div class="votingActions">
+                <form action="voteDrop/pos/{{ drop_item.id }}">
+                    <div class="btnStrongActPos null marbot">
+                        <button>UPVOTE</button>
+                    </div>
+                </form>
+
+                <p class="votes marbot">{% if drop_item.popularity >= 0 %}
+                    +
+                {% endif %}
+                    {{ drop_item.popularity }}</p>
+
+                <form action="voteDrop/neg/{{ drop_item.id }}">
+                    <div class="btnStrongActNeg null marbot">
+                        <button>DOWNVOTE</button>
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="date">
+        <p>{{ drop_item.creation_date }}</p>
+    </div>
+{% endblock %}

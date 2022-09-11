@@ -1,0 +1,51 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Add tea{% endblock %}
+{% block styles %}{% static 'add_tea.css' %}{% endblock %}
+{% block linkStyle4 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBar">
+        <form action="{% url 'collection' %}">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">Add tea</span>
+    </div>
+    <div class="wrapper">
+        <div class="left">
+            <div class="heading">Fill the data, when You have ID</div>
+            <div class="form">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="formItem">
+                        <p class="formTitle">Tea name</p>
+                        <label>
+                            <input type="text" name="tea_name" class="textEdit" placeholder="Tea name">
+                        </label>
+                    </div>
+                    <div class="formItem">
+                        <p class="formTitle">Country of origin</p>
+                        <label>
+                            <input type="text" name="country" class="textEdit" placeholder="Country of origin">
+                        </label>
+                    </div>
+                    <div class="formItem">
+                        <p class="formTitle">Price</p>
+                        <label>
+                            <input type="text" name="price" class="textEdit" placeholder="Price">
+                        </label>
+                    </div>
+                    <div class="formItem">
+                        <p class="formTitle">Package ID</p>
+                        <label>
+                            <input type="text" name="package_id" class="textEdit" placeholder="Package ID">
+                        </label>
+                    </div>
+                    <div class="btnStrongActPos">
+                        <button>CONFIRM</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,71 @@
+@import url(./main.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: var(--bt-shift);
+    background-color: var(--nav-font);
+    margin-top: var(--tp-shift);
+}
+
+.topBar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.btnBack {
+    position: absolute;
+    left: 0;
+}
+
+.sectionTitle {
+    font-size: var(--section-title-font);
+    color: var(--main-text);
+    margin: auto;
+}
+
+.listItem {
+    margin-bottom: 1rem;
+    width: 30rem;
+}
+
+.btnPos {
+    margin-right: 1rem;
+}
+
+.cards {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.cardItems {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardNumber {
+    width: max-content;
+}
+
+.btnStrongAct {
+    margin-left: 0;
+    margin-top: auto;
+}
+
+.chooser {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--main-text);
+}
+
+.chosen {
+    border: 3px solid var(--main-text);
+    background-color: var(--item-dark-bg);
+}

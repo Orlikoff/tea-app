@@ -1,0 +1,51 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Drops{% endblock %}
+{% block styles %}{% static 'drops.css' %}{% endblock %}
+{% block linkStyle3 %}active{% endblock %}
+
+{% block content %}
+    <p class="heading">Latest drops...</p>
+
+    <div class="gridWrapper">
+        <div class="items">
+            {% for drop_item in drop_items %}
+                <div class="dropItem">
+                    <p class="dropTitle">{{ drop_item.title }}</p>
+                    <p class="dropInfo">{{ drop_item.short_article }}...</p>
+                    <p class="date">{{ drop_item.creation_date }}</p>
+                    <div class="bottom">
+                        <p class="votes">
+                            {% if drop_item.popularity >= 0 %}
+                            +
+                            {% endif %}
+                            {{ drop_item.popularity }}</p>
+                        <form action="dropInfo/{{ drop_item.id }}">
+                            <button class="btnActRed">MORE</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="mainBottom">
+        <form action="{% url 'addDrop' %}">
+            <div class="btnStrongAct nullMargin">
+                <button>ADD DROP</button>
+            </div>
+        </form>
+        <div class="sort">
+            <form action="changeDropsMode/date">
+                <div class="btnStrongAct">
+                    <button>RECENT FIRST</button>
+                </div>
+            </form>
+            <form action="changeDropsMode/popularity">
+                <div class="btnStrongAct">
+                    <button>POPULAR FIRST</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

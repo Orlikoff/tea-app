@@ -1,0 +1,44 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block styles %}{% static 'login.css' %}{% endblock %}
+{% block linkStyle4 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBar">
+        <span class="sectionTitle">Login</span>
+    </div>
+    <div class="form">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="formItem">
+                <p class="formTitle">Email</p>
+                <label>
+                    <input name="email" type="email" class="textEdit" placeholder="Email" required>
+                </label>
+            </div>
+            <div class="formItem">
+                <p class="formTitle">Password</p>
+                <label>
+                    <input name="password" type="password" class="textEdit" placeholder="Password" required>
+                </label>
+            </div>
+            <div class="btnStrongActPos">
+                <button>CONFIRM</button>
+            </div>
+            <style>
+                .link {
+                    margin-top: 1rem;
+                }
+
+                .link a {
+                    font-size: var(--title-font);
+                    color: var(--main-text);
+                }
+            </style>
+            <div class="link">
+                <a href="{% url 'signup' %}">Don't have an account?</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

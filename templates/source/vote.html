@@ -1,0 +1,33 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Vote{% endblock %}
+{% block styles %}{% static 'vote.css' %}{% endblock %}
+{% block linkStyle4 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBar">
+        <form action="{% url 'collection' %}">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">Vote</span>
+    </div>
+
+    <p class="teaName">{{ tea_item.name }}, {{ tea_item.origin_country }}</p>
+
+    <div class="form">
+
+        <form action="voteFor/{{ tea_item.id }}" method="POST">
+            {% csrf_token %}
+            <div class="formItem">
+                <p class="formTitle">Mark</p>
+                <label>
+                    <input type="text" name="mark" class="textEdit" placeholder="Mark"/>
+                </label>
+            </div>
+                <div class="btnStrongActPos">
+                    <button type="submit">CONFIRM</button>
+                </div>
+        </form>
+
+    </div>
+{% endblock %}

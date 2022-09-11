@@ -1,0 +1,40 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Add card{% endblock %}
+{% block styles %}{% static 'add_card.css' %}{% endblock %}
+{% block linkStyle4 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBar">
+        <form action="{% url 'cards' %}">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">Add card</span>
+    </div>
+    <div class="form">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="formItem">
+                <p class="formTitle">Card number</p>
+                <label>
+                    <input type="text" name="card_number" class="textEdit" placeholder="Card number">
+                </label>
+            </div>
+            <div class="formItem">
+                <p class="formTitle">Card date</p>
+                <label>
+                    <input type="text" name="card_date" class="textEdit" placeholder="Card date">
+                </label>
+            </div>
+            <div class="formItem">
+                <p class="formTitle">CVV code</p>
+                <label>
+                    <input type="text" name="card_cvv" class="textEdit" placeholder="CVV code">
+                </label>
+            </div>
+            <div class="btnStrongActPos">
+                <button>CONFIRM</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

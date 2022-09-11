@@ -1,0 +1,51 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Cart{% endblock %}
+{% block styles %}{% static 'cart.css' %}{% endblock %}
+{% block linkStyle2 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBar">
+        <form action="{{ url_to_comeback }}">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">Cart</span>
+    </div>
+
+    <div class="gridWrapper">
+        <div class="items">
+            {% for cart_item in cart_items %}
+                <div class="listItem
+                        {% if cart_item.interaction_status == 'BUY' %}
+                        added
+                        {% else %}
+                        removed
+                        {% endif %}">
+                    <div class="textSection">
+                        <p class="title">{{ cart_item.name }}, {{ cart_item.origin_country }}</p>
+                        <p class="price">{{ cart_item.price }}$</p>
+                    </div>
+                    <form action="removeFromCart/{{ cart_item.id }}">
+                        <button class="btnNeg">REMOVE</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="bottom">
+        <p><strong>{{ cart_sum }}$</strong></p>
+        <div class="actions">
+            <form action="{% url 'cleanCart' %}">
+                <div class="btnStrongActNeg">
+                    <button>CLEAR ALL</button>
+                </div>
+            </form>
+            <form action="{% url 'confirmPayment' %}">
+                <div class="btnStrongActPos">
+                    <button>CONFIRM PAYMENT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

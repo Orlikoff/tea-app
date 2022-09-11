@@ -1,0 +1,46 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Change profile{% endblock %}
+{% block styles %}{% static 'change_profile.css' %}{% endblock %}
+{% block linkStyle4 %}active{% endblock %}
+
+{% block content %}
+    <div class="topBar">
+        <form action="{% url 'profile' %}">
+            <button class="btnBack">BACK</button>
+        </form>
+        <span class="sectionTitle">Profile details</span>
+    </div>
+
+    <div class="info">
+        <div class="space left">
+            <div class="profileData">
+                <p><strong>Email: </strong>{{ user.email }}</p>
+                <p><strong>Name: </strong>{{ user.name }}</p>
+                <p><strong>Surname: </strong>{{ user.surname }}</p>
+                <p><strong>Address: </strong>{{ user.address }}</p>
+                <p><strong>Rating: </strong>{{ user.rating }}</p>
+                <p><strong>Orders: </strong>{{ user.orders_num }}</p>
+                <p><strong>Registered on: </strong>{{ user.registration_date }}</p>
+            </div>
+            <div class="actions">
+                <form action="{% url 'logout' %}?next=/">
+                    <button class="btnActRed">LOG OUT</button>
+                </form>
+                <form action="deleteProfile/{{ user.id }}">
+                    <button class="btnActRed red">DELETE</button>
+                </form>
+            </div>
+        </div>
+        <div class="space right">
+            <div class="buttons">
+                <div class="btnNeut">
+                    <button>USER AGREEMENT</button>
+                </div>
+                <div class="btnNeut">
+                    <button>PRIVACY POLICY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

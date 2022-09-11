@@ -1,0 +1,106 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Market{% endblock %}
+{% block styles %}{% static 'market.css' %}{% endblock %}
+{% block linkStyle2 %}active{% endblock %}
+
+{% block content %}
+{#    <div class="searchBar">#}
+{#        <label id="searchField">#}
+{#            <input type="text" class="search" placeholder="Input tea">#}
+{#            <button class="btnActRed" type="submit">SEARCH</button>#}
+{#        </label>#}
+{#    </div>#}
+    <div class="topBar">
+        <span class="sectionTitle">Market</span>
+    </div>
+
+    <div class="gridWrapper">
+        <div class="items">
+            {% if mode == 'buying' %}
+
+                {% for tea_item in tea_items %}
+                    <div class="listItem">
+                        <div class="textSection">
+                            <p class="title">{{ tea_item.name }}, {{ tea_item.origin_country }}</p>
+                            <div class="stats"><span class="
+                            {% if not tea_item.previous_owner %}
+                            {% elif 0 <= tea_item.previous_owner.rating and tea_item.previous_owner.rating < 2 %}
+                            markLow
+                            {% elif tea_item.previous_owner.rating < 5 %}
+                            markMedium
+                            {% elif tea_item.previous_owner.rating < 8 %}
+                            markGood
+                            {% else %}
+                            markExcellent
+                            {% endif %}
+                        ">
+                            {% if not tea_item.previous_owner %}
+                                VER
+                            {% else %}
+                                {{ tea_item.previous_owner.rating }}
+                            {% endif %}
+                        </span>/<span
+                                    class="orders {% if not tea_item.previous_owner or tea_item.previous_owner.orders_num >= 1000 %}markVerified{% endif %}">
+                            {% if not tea_item.previous_owner %}
+                                VER
+                            {% elif tea_item.previous_owner.orders_num > 999 %}
+                                VER
+                            {% else %}
+                                {{ tea_item.previous_owner.orders_num }}
+                            {% endif %}
+                        </span></div>
+                            <p class="price">{{ tea_item.price }}$</p>
+                        </div>
+                        <form action="buyTea/{{ tea_item.id }}">
+                            <button class="btnPos">BUY</button>
+                        </form>
+                    </div>
+                {% endfor %}
+
+            {% else %}
+
+                {% for tea_item in tea_items %}
+                    <div class="listItem">
+                        <div class="textSection">
+                            <p class="title">{{ tea_item.name }}, {{ tea_item.origin_country }}</p>
+                            <p class="price">{{ tea_item.price }}$</p>
+                        </div>
+                        <form action="sellTea/{{ tea_item.id }}">
+                            <button class="btnPos">SELL</button>
+                        </form>
+                    </div>
+                {% endfor %}
+
+            {% endif %}
+
+        </div>
+    </div>
+
+    <div class="bottom">
+        <p>You are <u><strong>
+            {% if mode == 'buying' %}BUYING{% else %}SELLING{% endif %}</strong></u> now</p>
+        <div class="actions">
+            <form action="changeMarketMode/buying">
+                <div class="btnStrongAct">
+                    <button>BUY</button>
+                </div>
+            </form>
+            <form action="changeMarketMode/selling">
+                <div class="btnStrongAct">
+                    <button>SELL</button>
+                </div>
+            </form>
+        </div>
+        <div class="cart">
+            <div class="btnNeut">
+                <form action="{% url 'cart' %}">
+                    <button>PROCEED TO CART</button>
+                </form>
+            </div>
+            <p class="counter">
+                {{ cart_amount }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
